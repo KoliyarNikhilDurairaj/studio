@@ -1,29 +1,65 @@
+
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ShieldCheck } from 'lucide-react';
 import { navLinks } from '@/lib/nav-links';
-import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 const Header = () => {
+  const [activeLink, setActiveLink] = useState('#home');
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+
+      const sections = navLinks.map((link) => document.getElementById(link.href.substring(1)));
+      let currentSection = '#home';
+
+      sections.forEach((section) => {
+        if (section && window.scrollY >= section.offsetTop - 100) {
+          currentSection = `#${section.id}`;
+        }
+      });
+
+      setActiveLink(currentSection);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); 
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm shadow-sm">
-      <div className="container mx-auto flex flex-col sm:flex-row h-auto sm:h-20 items-center justify-between px-4 py-2 sm:py-0">
-        <Link href="#home" className="flex items-center gap-2 text-primary transition-transform hover:scale-105 mb-2 sm:mb-0">
+    <header className={cn(
+      "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+      isScrolled ? "bg-background/80 backdrop-blur-sm shadow-md" : "bg-transparent"
+    )}>
+      <div className="container mx-auto flex h-20 items-center justify-between px-4">
+        <Link href="#home" className="flex items-center gap-2 text-primary transition-transform hover:scale-105">
           <ShieldCheck className="h-8 w-8" />
           <span className="text-2xl font-bold font-headline">Proteciot</span>
         </Link>
 
-        <nav>
-          <ul className="flex items-center gap-1 flex-wrap justify-center">
+        <nav className="hidden md:block">
+          <ul className="flex items-center gap-2">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <Button variant="ghost" asChild>
-                  <Link href={link.href} className="px-3 py-2 text-xs sm:text-sm font-medium text-foreground/80 hover:text-primary">
-                    {link.name}
-                  </Link>
-                </Button>
+                <Link
+                  href={link.href}
+                  className={cn(
+                    "relative px-3 py-2 text-sm font-medium transition-colors",
+                    activeLink === link.href ? "text-primary" : "text-foreground/70 hover:text-primary",
+                  )}
+                >
+                  {link.name}
+                  {activeLink === link.href && (
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-4/5 bg-primary rounded-full" />
+                  )}
+                </Link>
               </li>
             ))}
           </ul>
@@ -34,3 +70,5 @@ const Header = () => {
 };
 
 export default Header;
+
+    
