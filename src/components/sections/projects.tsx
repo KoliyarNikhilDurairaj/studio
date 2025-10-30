@@ -7,21 +7,21 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 const projects = [
   {
     id: 'project-1',
-    title: 'Threat-Intel AI',
-    description: 'An advanced AI platform that proactively identifies and neutralizes cyber threats by analyzing global data streams in real-time.',
-    tags: ['AI', 'Cybersecurity', 'SaaS'],
+    title: 'Smart Home Automation',
+    description: 'Build a system to control lights, temperature, and appliances in your home using an ESP32 and MicroPython.',
+    tags: ['ESP32', 'MicroPython', 'IoT'],
   },
   {
     id: 'project-2',
-    title: 'Privacy Guardian',
-    description: 'A comprehensive data privacy suite that uses machine learning to automatically classify sensitive data and enforce compliance policies.',
-    tags: ['Data Privacy', 'Machine Learning', 'Compliance'],
+    title: 'Weather Monitoring Station',
+    description: 'Create a device that collects and displays real-time weather data, sending alerts based on environmental changes.',
+    tags: ['Sensors', 'Data Logging', 'API'],
   },
   {
     id: 'project-3',
-    title: 'Secure-Dev Copilot',
-    description: 'An intelligent assistant for developers that identifies security vulnerabilities during the coding process, preventing issues before deployment.',
-    tags: ['DevSecOps', 'AI', 'Code Analysis'],
+    title: 'Automated Plant Watering',
+    description: 'Design an intelligent system that monitors soil moisture and waters plants automatically, ensuring they stay healthy.',
+    tags: ['Embedded Systems', 'IoT', 'Automation'],
   },
 ];
 
@@ -31,17 +31,17 @@ const ProjectsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold font-headline text-primary">
-            Our Work
+            Example Projects
           </h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
-            We transform complex challenges into elegant, intelligent solutions. Here’s a glimpse of our impactful projects.
+            Get inspired by what you can build. We guide you through projects like these, from concept to completion.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => {
             const projectImage = PlaceHolderImages.find(p => p.id === project.id);
             return (
-              <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+              <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 bg-card/50">
                 {projectImage && (
                   <div className="aspect-w-3 aspect-h-2">
                     <Image

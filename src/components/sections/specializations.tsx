@@ -1,45 +1,45 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Shield, DatabaseZap, BrainCircuit, Code } from 'lucide-react';
+import { Zap, Wifi, Cpu, Code } from 'lucide-react';
 
 const specializations = [
   {
-    icon: <Shield className="h-10 w-10 text-primary" />,
-    name: 'AI-Powered Cybersecurity',
-    description: 'Proactive threat detection and response using advanced machine learning models.',
+    icon: <Cpu className="h-10 w-10 text-primary" />,
+    name: 'Embedded Systems',
+    description: 'Mastering microcontrollers like ESP32 and applying them to solve real-world problems.',
   },
   {
-    icon: <DatabaseZap className="h-10 w-10 text-primary" />,
-    name: 'Intelligent Data Privacy',
-    description: 'Automated solutions for data classification, anonymization, and compliance.',
+    icon: <Zap className="h-10 w-10 text-primary" />,
+    name: 'MicroPython & C++',
+    description: 'Writing clean and efficient code for resource-constrained devices.',
   },
   {
-    icon: <BrainCircuit className="h-10 w-10 text-primary" />,
-    name: 'Threat Intelligence',
-    description: 'Aggregating and analyzing threat data to predict and prevent attacks.',
+    icon: <Wifi className="h-10 w-10 text-primary" />,
+    name: 'IoT Protocols',
+    description: 'Understanding and implementing MQTT, HTTP, and other key communication protocols.',
   },
   {
     icon: <Code className="h-10 w-10 text-primary" />,
-    name: 'Secure Development Lifecycle',
-    description: 'Integrating security into every phase of software development with AI tools.',
+    name: 'Full Project Lifecycle',
+    description: 'From brainstorming and circuit design to coding and final presentation.',
   },
 ];
 
 const SpecializationsSection = () => {
   return (
-    <section id="specializations" className="py-20 lg:py-32 bg-secondary">
+    <section id="specializations" className="py-20 lg:py-32 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold font-headline text-primary">
-            Our Expertise
+            Our Focus Areas
           </h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
-            We specialize in the most critical areas where AI and security intersect, delivering unparalleled protection and insight.
+            We specialize in the fundamental skills and technologies that power the Internet of Things.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {specializations.map((spec, index) => (
-            <Card key={index} className="flex items-center p-6 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+            <Card key={index} className="flex items-center p-6 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-card/50">
               <CardHeader className="p-0 pr-6">
                 {spec.icon}
               </CardHeader>

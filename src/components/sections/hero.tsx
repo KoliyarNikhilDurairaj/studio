@@ -21,17 +21,17 @@ const HeroSection = () => {
           className="object-cover"
         />
       )}
-      <div className="absolute inset-0 bg-primary/70" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
       <div className="relative z-10 p-4">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold font-headline tracking-tighter mb-4 animate-fade-in-down">
-          Innovate. Secure. Advance.
+          Build. Learn. Innovate.
         </h1>
         <p className="max-w-3xl mx-auto text-lg md:text-xl lg:text-2xl text-primary-foreground/90 mb-8 animate-fade-in-up">
-          Pioneering AI-driven solutions for a protected digital future.
+          Your free IoT project mentorship platform for turning ideas into reality.
         </p>
         <Button asChild size="lg" className="animate-fade-in-up animation-delay-300 bg-accent hover:bg-accent/90 transition-transform hover:scale-105">
-          <Link href="#projects">
-            Explore Our Work
+          <Link href="#services">
+            Explore Our Services
           </Link>
         </Button>
       </div>

@@ -3,29 +3,29 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const BusinessModelSection = () => {
   return (
-    <section id="business-model" className="py-20 lg:py-32 bg-secondary">
+    <section id="business-model" className="py-20 lg:py-32 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold font-headline text-primary">
-            Our Approach
+            Our Mentorship Model
           </h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
-            Our business model is designed for synergy, scalability, and sustained value, primarily focusing on a B2B SaaS framework.
+            Our approach is designed for accessibility and personalized learning, offered completely free of charge.
           </p>
         </div>
-        <Card className="shadow-xl">
+        <Card className="shadow-xl bg-card/50">
             <CardContent className="p-8 md:p-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                        <h3 className="text-2xl font-bold text-accent mb-4">Subscription-Based Services</h3>
+                        <h3 className="text-2xl font-bold text-accent mb-4">Personalized Mentoring</h3>
                         <p className="text-foreground/80">
-                            We provide our cutting-edge AI security solutions through flexible subscription tiers. This ensures continuous protection, regular updates, and access to our latest innovations without a large upfront investment.
+                            We offer one-on-one and group mentoring sessions via online platforms like Zoom. This allows for tailored guidance that meets you where you are, whether you're just starting or deep into a project.
                         </p>
                     </div>
                     <div>
-                        <h3 className="text-2xl font-bold text-accent mb-4">Consulting & Custom Solutions</h3>
+                        <h3 className="text-2xl font-bold text-accent mb-4">Commitment to Open Education</h3>
                         <p className="text-foreground/80">
-                            For organizations with unique requirements, we offer bespoke consulting services. Our team works closely with you to design, build, and integrate custom AI models and security frameworks tailored to your specific operational landscape.
+                            Proteciot is a non-profit initiative. All mentorship and resources are provided for free. Our mission is to break down financial barriers and make hands-on tech education available to every passionate student.
                         </p>
                     </div>
                 </div>

@@ -2,33 +2,33 @@
   "placeholderImages": [
     {
       "id": "hero-background",
-      "description": "Abstract network of digital connections",
-      "imageUrl": "https://images.unsplash.com/photo-1714152869220-b1407da01694?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaWdpdGFsJTIwcHJvdGVjdGlvbnxlbnwwfHx8fDE3NjE4Mzg2MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "digital protection"
+      "description": "Student working on an electronics project with glowing LEDs",
+      "imageUrl": "https://images.unsplash.com/photo-1581092921434-098c11a039d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxpb3QlMjBwcm9qZWN0fGVufDB8fHx8MTc2MjE5NjQ4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "iot project"
     },
     {
       "id": "about-us",
-      "description": "Diverse team collaborating in a modern office",
-      "imageUrl": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3NjE3MzMwNzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "team collaboration"
+      "description": "A mentor guiding a student with an electronics board",
+      "imageUrl": "https://images.unsplash.com/photo-1558021212-51b6ec1e6c1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtZW50b3J8ZW58MHx8fHwxNzYxNzMxMDUwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mentor student"
     },
     {
       "id": "project-1",
-      "description": "Dashboard showing data analytics",
-      "imageUrl": "https://images.unsplash.com/photo-1562575214-da9fcf59b907?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0ZWNobm9sb2d5JTIwYWJzdHJhY3R8ZW58MHx8fHwxNzYxNzMxNjkzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "technology abstract"
+      "description": "A person controlling home lights with a smartphone",
+      "imageUrl": "https://images.unsplash.com/photo-1617933623884-241b3695287a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzbWFydCUyMGhvbWUlMjBhdXRvbWF0aW9ufGVufDB8fHx8MTc2MjE5NjU4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "smart home"
     },
     {
       "id": "project-2",
-      "description": "Cybersecurity operations center visualization",
-      "imageUrl": "https://images.unsplash.com/photo-1738082956220-a1f20a8632ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGF0YSUyMG5ldHdvcmt8ZW58MHx8fHwxNzYxNzkyMTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "data network"
+      "description": "DIY weather station with sensors outdoors",
+      "imageUrl": "https://images.unsplash.com/photo-1593532785660-a253a673081c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3ZWF0aGVyJTIwc3RhdGlvbnxlbnwwfHx8fDE3NjIxOTY2MTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "weather station"
     },
     {
       "id": "project-3",
-      "description": "Robot arm interacting with a digital interface",
-      "imageUrl": "https://images.unsplash.com/photo-1673255745677-e36f618550d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhaSUyMHJvYm90fGVufDB8fHx8MTc2MTcyNTEwOHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "ai robot"
+      "description": "Close-up of a potted plant with a soil moisture sensor",
+      "imageUrl": "https://images.unsplash.com/photo-1533038601633-f72535313936?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzb2lsJTIwbW9pc3R1cmUlMjBzZW5zb3J8ZW58MHx8fHwxNzYyMTk2NjQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "soil sensor"
     }
   ]
 }

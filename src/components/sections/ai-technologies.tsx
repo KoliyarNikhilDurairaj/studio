@@ -1,27 +1,27 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Bot, FileText, Eye, Puzzle } from 'lucide-react';
+import { GitBranch, Presentation, MessageCircle, Group } from 'lucide-react';
 
 const technologies = [
   {
-    icon: <Bot className="h-10 w-10 text-accent" />,
-    name: 'Machine Learning',
-    description: 'Developing predictive models and algorithms that learn from data to drive intelligent decisions.',
+    icon: <GitBranch className="h-10 w-10 text-accent" />,
+    name: 'Project Ideation',
+    description: 'Helping you brainstorm and refine your project ideas to ensure they are impactful and achievable.',
   },
   {
-    icon: <FileText className="h-10 w-10 text-accent" />,
-    name: 'Natural Language Processing',
-    description: 'Enabling machines to understand, interpret, and generate human language for advanced analysis.',
+    icon: <Presentation className="h-10 w-10 text-accent" />,
+    name: 'Presentation Support',
+    description: 'Guiding you on how to structure and deliver a compelling project presentation.',
   },
   {
-    icon: <Eye className="h-10 w-10 text-accent" />,
-    name: 'Computer Vision',
-    description: 'Training systems to interpret and understand the visual world from images and videos.',
+    icon: <MessageCircle className="h-10 w-10 text-accent" />,
+    name: 'Circuit Diagrams',
+    description: 'Assisting with the creation of clear and accurate circuit diagrams for your hardware.',
   },
   {
-    icon: <Puzzle className="h-10 w-10 text-accent" />,
-    name: 'Reinforcement Learning',
-    description: 'Building self-learning models that make a sequence of decisions to achieve a complex objective.',
+    icon: <Group className="h-10 w-10 text-accent" />,
+    name: 'Teamwork Strategies',
+    description: 'Providing strategies for effective collaboration, communication, and project management.',
   },
 ];
 
@@ -31,15 +31,15 @@ const AiTechnologiesSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold font-headline text-primary">
-            Technologies We Master
+            Holistic Development
           </h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
-            We leverage a powerful stack of AI technologies to build robust and scalable solutions.
+            We support more than just code. Our mentorship covers the full spectrum of skills needed for successful project delivery.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {technologies.map((tech, index) => (
-            <Card key={index} className="text-center flex flex-col items-center p-6 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+            <Card key={index} className="text-center flex flex-col items-center p-6 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-card/50">
               <CardHeader className="p-0 mb-4">
                 {tech.icon}
               </CardHeader>

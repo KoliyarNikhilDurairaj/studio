@@ -12,18 +12,18 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
             <h2 className="text-4xl lg:text-5xl font-bold font-headline mb-6 text-primary">
-              Who We Are
+              Our Mission
             </h2>
             <p className="text-lg text-foreground/80 mb-4">
-              Proteciot stands at the vanguard of artificial intelligence and cybersecurity. We are a collective of innovators, engineers, and strategists dedicated to crafting intelligent systems that protect and empower businesses in the digital age. Our philosophy is rooted in proactive defense and continuous innovation.
+              Proteciot is an educational initiative dedicated to making technology accessible for everyone. We provide free, high-quality IoT project mentorship to engineering students, empowering them to build innovative, real-world systems from the ground up.
             </p>
             <p className="text-lg text-foreground/80">
-              We believe in building more than just software; we build partnerships. By understanding the unique challenges our clients face, we deliver bespoke AI solutions that are not only technologically advanced but also strategically aligned with their long-term goals.
+              We believe in learning by doing. Our goal is to bridge the gap between academic knowledge and practical skills, fostering a community of curious minds and future tech leaders through hands-on guidance and collaborative support.
             </p>
           </div>
           <div className="order-1 lg:order-2 flex justify-center">
             {aboutImage && (
-              <Card className="overflow-hidden rounded-2xl shadow-2xl w-full max-w-md">
+              <Card className="overflow-hidden rounded-2xl shadow-2xl w-full max-w-md bg-card/50">
                 <CardContent className="p-0">
                   <Image
                     src={aboutImage.imageUrl}

@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Proteciot',
-  description: 'Pioneering AI-driven solutions for a protected digital future.',
+  title: 'Proteciot - Free IoT Project Mentorship',
+  description: 'An educational initiative providing free IoT project mentorship to engineering students to build real-world systems.',
 };
 
 export default function RootLayout({
