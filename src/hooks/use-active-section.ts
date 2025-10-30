@@ -4,7 +4,7 @@
 import { useState, useEffect, useRef } from 'react';
 
 export function useActiveSection(sectionIds: string[], rootMargin = '-50% 0px -50% 0px') {
-  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [activeSection, setActiveSection] = useState<string | null>('home');
   const observer = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
