@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "hero-background",
-      "description": "Student working on an electronics project with glowing LEDs",
-      "imageUrl": "https://images.unsplash.com/photo-1581092921434-098c11a039d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxpb3QlMjBwcm9qZWN0fGVufDB8fHx8MTc2MjE5NjQ4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "iot project"
+      "description": "Illustration of online video call mentorship for an IoT project",
+      "imageUrl": "https://images.unsplash.com/photo-1630659508381-2e88af5d72ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxvbmxpbmUlMjBtZW50b3JzaGlwJTIwaWxsdXN0cmF0aW9ufGVufDB8fHx8MTc2MTg0MjIzMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "online mentorship illustration"
     },
     {
       "id": "about-us",
