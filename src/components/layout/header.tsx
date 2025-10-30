@@ -9,6 +9,8 @@ import { Button } from '@/components/ui/button';
 import {
   Sheet,
   SheetContent,
+  SheetHeader,
+  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 
@@ -48,8 +50,8 @@ const Header = () => {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <div className="p-4">
-                <div className="flex items-center justify-between">
+                <SheetHeader className="p-4 flex flex-row items-center justify-between">
+                    <SheetTitle className="sr-only">Menu</SheetTitle>
                     <Link href="#home" onClick={() => setIsOpen(false)} className="flex items-center gap-2 text-primary">
                         <ShieldCheck className="h-8 w-8" />
                         <span className="text-2xl font-bold font-headline">Proteciot</span>
@@ -58,8 +60,8 @@ const Header = () => {
                         <X className="h-6 w-6" />
                         <span className="sr-only">Close menu</span>
                     </Button>
-                </div>
-                <nav className="mt-8">
+                </SheetHeader>
+                <nav className="mt-8 px-4">
                   <ul className="flex flex-col gap-4">
                     {navLinks.map((link) => (
                       <li key={link.href}>
@@ -74,7 +76,6 @@ const Header = () => {
                     ))}
                   </ul>
                 </nav>
-              </div>
             </SheetContent>
           </Sheet>
         </div>
