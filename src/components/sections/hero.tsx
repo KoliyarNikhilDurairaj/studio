@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -25,7 +26,7 @@ const HeroSection = () => {
             </Link>
           </Button>
         </div>
-        <div className="flex justify-center items-center p-8 animate-fade-in-down">
+        <div className="flex justify-center items-center p-8">
             {heroImage && (
               <Image
                 src={heroImage.imageUrl}
@@ -40,16 +41,9 @@ const HeroSection = () => {
         </div>
       </div>
       <style jsx>{`
-        @keyframes fade-in-down {
-          from { opacity: 0; transform: translateY(-20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
         @keyframes fade-in-up {
           from { opacity: 0; transform: translateY(20px); }
           to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in-down {
-          animation: fade-in-down 0.8s ease-out forwards;
         }
         .animate-fade-in-up {
           animation: fade-in-up 0.8s ease-out forwards;

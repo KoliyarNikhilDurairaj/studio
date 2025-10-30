@@ -4,7 +4,6 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { GitBranch, Presentation, MessageCircle, Group } from 'lucide-react';
-import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 const technologies = [
   {
@@ -30,13 +29,10 @@ const technologies = [
 ];
 
 const AiTechnologiesSection = () => {
-  const { ref, isInView } = useScrollAnimation();
-
   return (
     <section 
       id="ai-tech"
-      ref={ref}
-      className={`py-20 lg:py-32 transition-opacity duration-1000 ease-in ${isInView ? 'opacity-100' : 'opacity-0'}`}
+      className="py-20 lg:py-32"
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">

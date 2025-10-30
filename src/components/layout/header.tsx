@@ -1,11 +1,12 @@
+
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { ShieldCheck } from 'lucide-react';
 import { navLinks } from '@/lib/nav-links';
 import { cn } from '@/lib/utils';
-import { useActiveSection } from '@/hooks/use-active-section';
 
 const gradients = [
   'from-pink-500 to-purple-600',
@@ -21,18 +22,19 @@ const gradients = [
 ];
 
 const Header = () => {
-  const activeSection = useActiveSection();
+  const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/#home" className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-2">
           <ShieldCheck className="h-7 w-7 text-primary" />
           <span className="text-xl font-bold">Proteciot</span>
         </Link>
         
-        <nav className="hidden md:flex gap-4">
+        <nav className="hidden md:flex gap-6">
           {navLinks.map((link, index) => {
+            const isActive = pathname === link.href || (link.href === '/' && pathname.startsWith('/#'));
             return (
               <Link
                 key={link.href}
@@ -52,7 +54,7 @@ const Header = () => {
                 />
                 
                 {/* Active underline effect */}
-                {link.name === activeSection && (
+                {isActive && (
                   <span
                     className={cn(
                       "absolute bottom-0 left-0 h-0.5 w-full",

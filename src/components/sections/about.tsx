@@ -5,17 +5,14 @@ import React from 'react';
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 const AboutSection = () => {
   const aboutImage = PlaceHolderImages.find(p => p.id === 'about-us');
-  const { ref, isInView } = useScrollAnimation();
 
   return (
     <section 
       id="about" 
-      ref={ref}
-      className={`py-20 lg:py-32 transition-opacity duration-1000 ease-in ${isInView ? 'opacity-100' : 'opacity-0'}`}
+      className="py-20 lg:py-32"
     >
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
