@@ -3,11 +3,11 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { ShieldCheck } from 'lucide-react';
 import { navLinks } from '@/lib/nav-links';
 import { cn } from '@/lib/utils';
 import { ThemeToggle } from '@/components/theme-toggle';
+import { useActiveSection } from '@/hooks/use-active-section';
 
 const gradients = [
   'from-pink-500 to-purple-600',
@@ -23,7 +23,7 @@ const gradients = [
 ];
 
 const Header = () => {
-  const pathname = usePathname();
+  const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSection();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -36,11 +36,14 @@ const Header = () => {
         <div className="flex flex-1 items-center justify-end space-x-2">
           <nav className="hidden md:flex gap-1">
             {navLinks.map((link, index) => {
-              const isActive = pathname === link.href || (pathname.startsWith(link.href) && link.href !== '/');
               return (
                 <Link
                   key={link.href}
                   href={link.href}
+                  onClick={() => {
+                    setActiveSection(link.name);
+                    setTimeOfLastClick(Date.now());
+                  }}
                   className={cn(
                     "group relative px-3 py-2 text-sm font-medium transition-colors text-foreground/80 hover:text-foreground",
                   )}
@@ -56,7 +59,7 @@ const Header = () => {
                   />
                   
                   {/* Active underline effect */}
-                  {(isActive || (link.href === '/' && pathname === '/')) && (
+                  {link.name === activeSection && (
                     <span
                       className={cn(
                         "absolute bottom-0 left-0 h-0.5 w-full",
