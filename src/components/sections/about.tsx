@@ -12,7 +12,7 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
             <h2 className="text-4xl lg:text-5xl font-bold font-headline mb-6 text-primary">
-              Our Mission
+              About
             </h2>
             <p className="text-lg text-foreground/80 mb-4">
               Proteciot is an educational initiative dedicated to making technology accessible for everyone. We provide free, high-quality IoT project mentorship to engineering students, empowering them to build innovative, real-world systems from the ground up.
