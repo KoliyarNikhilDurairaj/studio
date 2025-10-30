@@ -86,6 +86,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    @apply bg-gradient-to-br from-background to-secondary/30;
+    background-image: linear-gradient(to bottom right, hsl(var(--background)), hsl(var(--secondary)));
   }
 }
