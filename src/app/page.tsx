@@ -18,7 +18,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
-        <Link href="/#home"><HeroSection /></Link>
+        <HeroSection />
         <Link href="/about"><AboutSection /></Link>
         <Link href="/projects"><ProjectsSection /></Link>
         <Link href="/achievements"><AchievementsSection /></Link>
