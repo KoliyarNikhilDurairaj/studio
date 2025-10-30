@@ -1,13 +1,23 @@
+
+"use client";
+
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
+import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 const ContactSection = () => {
+  const { ref, isInView } = useScrollAnimation();
+
   return (
-    <section id="contact" className="py-20 lg:py-32 bg-secondary/30">
+    <section 
+      id="contact" 
+      ref={ref}
+      className={`py-20 lg:py-32 bg-secondary/30 transition-opacity duration-1000 ease-in ${isInView ? 'opacity-100' : 'opacity-0'}`}
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold font-headline text-primary">

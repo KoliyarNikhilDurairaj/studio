@@ -1,8 +1,11 @@
 
+"use client";
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Github, Linkedin, Twitter } from 'lucide-react';
 import Link from 'next/link';
+import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 const socialLinks = [
   {
@@ -23,8 +26,14 @@ const socialLinks = [
 ];
 
 const SocialSection = () => {
+  const { ref, isInView } = useScrollAnimation();
+
   return (
-    <section id="connect" className="py-20 lg:py-32">
+    <section 
+      id="connect" 
+      ref={ref}
+      className={`py-20 lg:py-32 transition-opacity duration-1000 ease-in ${isInView ? 'opacity-100' : 'opacity-0'}`}
+    >
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="text-4xl lg:text-5xl font-bold font-headline text-primary mb-4">

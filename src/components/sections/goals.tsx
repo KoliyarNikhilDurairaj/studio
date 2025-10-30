@@ -1,9 +1,19 @@
+
+"use client";
+
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { useScrollAnimation } from '@/hooks/use-scroll-animation';
 
 const GoalsSection = () => {
+  const { ref, isInView } = useScrollAnimation();
+
   return (
-    <section id="goals" className="py-20 lg:py-32 bg-secondary/30">
+    <section 
+      id="goals" 
+      ref={ref}
+      className={`py-20 lg:py-32 bg-secondary/30 transition-opacity duration-1000 ease-in ${isInView ? 'opacity-100' : 'opacity-0'}`}
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold font-headline text-primary">

@@ -1,5 +1,4 @@
 
-import Link from "next/link";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import HeroSection from "@/components/sections/hero";
@@ -19,15 +18,15 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroSection />
-        <Link href="/about"><AboutSection /></Link>
-        <Link href="/projects"><ProjectsSection /></Link>
-        <Link href="/achievements"><AchievementsSection /></Link>
-        <Link href="/specializations"><SpecializationsSection /></Link>
-        <Link href="/ai-tech"><AiTechnologiesSection /></Link>
-        <Link href="/goals"><GoalsSection /></Link>
-        <Link href="/services"><ServicesSection /></Link>
+        <AboutSection />
+        <ProjectsSection />
+        <AchievementsSection />
+        <SpecializationsSection />
+        <AiTechnologiesSection />
+        <GoalsSection />
+        <ServicesSection />
         <SocialSection />
-        <Link href="/contact"><ContactSection /></Link>
+        <ContactSection />
       </main>
       <Footer />
     </div>

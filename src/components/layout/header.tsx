@@ -1,11 +1,11 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ShieldCheck } from 'lucide-react';
 import { navLinks } from '@/lib/nav-links';
 import { cn } from '@/lib/utils';
-import { usePathname } from 'next/navigation';
+import { useActiveSection } from '@/hooks/use-active-section';
 
 const gradients = [
   'from-pink-500 to-purple-600',
@@ -21,20 +21,12 @@ const gradients = [
 ];
 
 const Header = () => {
-  const pathname = usePathname();
-
-  const getActiveSection = () => {
-    if (pathname === '/') return 'Home';
-    const activeLink = navLinks.find(link => link.href === pathname);
-    return activeLink?.name || '';
-  };
-  
-  const activeSection = getActiveSection();
+  const activeSection = useActiveSection();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
+        <Link href="/#home" className="flex items-center space-x-2">
           <ShieldCheck className="h-7 w-7 text-primary" />
           <span className="text-xl font-bold">Proteciot</span>
         </Link>
