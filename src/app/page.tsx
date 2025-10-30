@@ -26,7 +26,7 @@ export default function Home() {
         <Link href="/ai-tech"><AiTechnologiesSection /></Link>
         <Link href="/goals"><GoalsSection /></Link>
         <Link href="/services"><ServicesSection /></Link>
-        <SocialSection />
+        <Link href="/connect"><SocialSection /></Link>
         <Link href="/contact"><ContactSection /></Link>
       </main>
       <Footer />

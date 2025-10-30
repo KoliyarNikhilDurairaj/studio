@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -23,7 +24,6 @@ const gradients = [
 
 const Header = () => {
   const pathname = usePathname();
-  const activePath = pathname === '/' ? '/home' : pathname;
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -36,7 +36,7 @@ const Header = () => {
         <div className="flex flex-1 items-center justify-end space-x-2">
           <nav className="hidden md:flex gap-1">
             {navLinks.map((link, index) => {
-              const isActive = activePath.startsWith(link.href);
+              const isActive = pathname === link.href || (pathname.startsWith(link.href) && link.href !== '/');
               return (
                 <Link
                   key={link.href}
@@ -56,7 +56,7 @@ const Header = () => {
                   />
                   
                   {/* Active underline effect */}
-                  {isActive && (
+                  {(isActive || (link.href === '/' && pathname === '/')) && (
                     <span
                       className={cn(
                         "absolute bottom-0 left-0 h-0.5 w-full",
