@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 export const metadata: Metadata = {
   title: 'Proteciot - Free IoT Project Mentorship',
@@ -29,6 +30,9 @@ export default function RootLayout({
         >
           {children}
           <Toaster />
+          <div className="fixed bottom-4 right-4 z-50">
+            <ThemeToggle />
+          </div>
         </ThemeProvider>
       </body>
     </html>

@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { ShieldCheck } from 'lucide-react';
 import { navLinks } from '@/lib/nav-links';
 import { cn } from '@/lib/utils';
-import { ThemeToggle } from '@/components/theme-toggle';
 import { usePathname } from 'next/navigation';
 
 const gradients = [
@@ -42,7 +41,7 @@ const Header = () => {
         </Link>
         
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <nav className="hidden md:flex gap-1">
+          <nav className="hidden md:flex gap-2">
             {navLinks.map((link, index) => {
               return (
                 <Link
@@ -75,7 +74,6 @@ const Header = () => {
               );
             })}
           </nav>
-          <ThemeToggle />
         </div>
       </div>
     </header>
