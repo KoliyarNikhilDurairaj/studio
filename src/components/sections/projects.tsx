@@ -31,7 +31,7 @@ const ProjectsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold font-headline text-primary">
-            Example Projects
+            IoT Projects
           </h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
             Get inspired by what you can build. We guide you through projects like these, from concept to completion.

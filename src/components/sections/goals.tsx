@@ -1,13 +1,13 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 
-const BusinessModelSection = () => {
+const GoalsSection = () => {
   return (
-    <section id="business-model" className="py-20 lg:py-32 bg-secondary/30">
+    <section id="goals" className="py-20 lg:py-32 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold font-headline text-primary">
-            Our Mentorship Model
+            Our Goals
           </h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
             Our approach is designed for accessibility and personalized learning, offered completely free of charge.
@@ -36,4 +36,4 @@ const BusinessModelSection = () => {
   );
 };
 
-export default BusinessModelSection;
+export default GoalsSection;
