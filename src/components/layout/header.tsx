@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { ShieldCheck } from 'lucide-react';
 import { navLinks } from '@/lib/nav-links';
 import { cn } from '@/lib/utils';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState('#home');
@@ -15,7 +16,11 @@ const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
 
-      const sections = navLinks.map((link) => document.getElementById(link.href.substring(1)));
+      const sections = navLinks.map((link) => {
+        const el = document.getElementById(link.href.substring(1));
+        return el;
+      });
+      
       let currentSection = '#home';
 
       sections.forEach((section) => {
@@ -43,32 +48,34 @@ const Header = () => {
           <ShieldCheck className="h-8 w-8" />
           <span className="text-2xl font-bold font-headline">Proteciot</span>
         </Link>
-
-        <nav className="hidden md:block">
-          <ul className="flex items-center gap-2">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={cn(
-                    "relative px-3 py-2 text-sm font-medium transition-colors",
-                    activeLink === link.href ? "text-primary" : "text-foreground/70 hover:text-primary",
-                  )}
-                >
-                  {link.name}
-                  {activeLink === link.href && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-4/5 bg-primary rounded-full" />
-                  )}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        
+        <div className="flex items-center gap-4">
+          <nav className="hidden md:block">
+            <ul className="flex items-center gap-2">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={cn(
+                      "group relative px-3 py-2 text-sm font-medium transition-colors",
+                      activeLink === link.href ? "text-primary" : "text-foreground/70 hover:text-primary",
+                    )}
+                  >
+                    {link.name}
+                    <span className={cn(
+                      "absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300",
+                      activeLink === link.href ? "w-full" : "w-0 group-hover:w-full"
+                    )} />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );
 };
 
 export default Header;
-
-    
