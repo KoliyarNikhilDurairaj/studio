@@ -1,3 +1,34 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-background",
+      "description": "Abstract network of digital connections",
+      "imageUrl": "https://images.unsplash.com/photo-1714152869220-b1407da01694?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkaWdpdGFsJTIwcHJvdGVjdGlvbnxlbnwwfHx8fDE3NjE4Mzg2MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "digital protection"
+    },
+    {
+      "id": "about-us",
+      "description": "Diverse team collaborating in a modern office",
+      "imageUrl": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3NjE3MzMwNzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "team collaboration"
+    },
+    {
+      "id": "project-1",
+      "description": "Dashboard showing data analytics",
+      "imageUrl": "https://images.unsplash.com/photo-1562575214-da9fcf59b907?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0ZWNobm9sb2d5JTIwYWJzdHJhY3R8ZW58MHx8fHwxNzYxNzMxNjkzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "technology abstract"
+    },
+    {
+      "id": "project-2",
+      "description": "Cybersecurity operations center visualization",
+      "imageUrl": "https://images.unsplash.com/photo-1738082956220-a1f20a8632ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGF0YSUyMG5ldHdvcmt8ZW58MHx8fHwxNzYxNzkyMTY0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "data network"
+    },
+    {
+      "id": "project-3",
+      "description": "Robot arm interacting with a digital interface",
+      "imageUrl": "https://images.unsplash.com/photo-1673255745677-e36f618550d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhaSUyMHJvYm90fGVufDB8fHx8MTc2MTcyNTEwOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ai robot"
+    }
+  ]
 }
