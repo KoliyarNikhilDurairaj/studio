@@ -11,35 +11,39 @@ const HeroSection = () => {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
   
   return (
-    <section id="home" className="relative min-h-[calc(100vh-4rem)] flex items-center bg-gradient-to-br from-background via-secondary/50 to-background">
-      <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
-        <div className="lg:col-span-2 relative z-10 p-4 text-center lg:text-left animate-fade-in-up">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold font-headline tracking-tighter mb-4 text-primary">
-            Mentorship for IoT Innovators
-          </h1>
-          <p className="max-w-xl mx-auto lg:mx-0 text-lg md:text-xl lg:text-2xl text-foreground/80 mb-8">
-            Get free, one-on-one guidance for your IoT projects through live video calls with experienced mentors.
-          </p>
-          <Button asChild size="lg" className="bg-accent hover:bg-accent/90 transition-transform hover:scale-105">
-            <Link href="/contact">
-              Start Your Project
-            </Link>
-          </Button>
-        </div>
-        <div className="lg:col-span-3 flex justify-center items-center p-4">
-            {heroImage && (
-              <Image
-                src={heroImage.imageUrl}
-                alt={heroImage.description}
-                width={800}
-                height={800}
-                priority
-                data-ai-hint={heroImage.imageHint}
-                className="object-contain w-full h-auto"
-              />
-            )}
-        </div>
+    <section id="home" className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden">
+      {heroImage && (
+        <Image
+          src={heroImage.imageUrl}
+          alt="Abstract background"
+          fill
+          priority
+          data-ai-hint={heroImage.imageHint}
+          className="object-cover w-full h-full blur-md scale-105"
+        />
+      )}
+      <div className="absolute inset-0 bg-background/60 backdrop-blur-sm"></div>
+      
+      <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in-up">
+        <h1 
+          className="text-5xl md:text-7xl lg:text-8xl font-extrabold font-headline tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-pink-500"
+          style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.3)' }}
+        >
+          Mentorship for IoT Innovators
+        </h1>
+        <p 
+          className="max-w-3xl mx-auto text-lg md:text-xl lg:text-2xl text-foreground/90 mb-8 font-medium"
+          style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.5)' }}
+        >
+          Get free, one-on-one guidance for your IoT projects through live video calls with experienced mentors.
+        </p>
+        <Button asChild size="lg" className="bg-accent hover:bg-accent/90 transition-transform hover:scale-105 shadow-lg">
+          <Link href="/contact">
+            Start Your Project
+          </Link>
+        </Button>
       </div>
+
       <style jsx>{`
         @keyframes fade-in-up {
           from { opacity: 0; transform: translateY(20px); }
