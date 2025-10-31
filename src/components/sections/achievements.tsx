@@ -6,9 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const achievements = [
   { value: '100+', label: 'Students Mentored' },
-  { value: '50+', label: 'Projects Completed' },
+  { value: '6', label: 'Projects Completed' },
   { value: '100%', label: 'Free of Cost' },
-  { value: '15+', label: 'Tech Workshops' },
+  { value: '8', label: 'Awards Won' },
 ];
 
 const AchievementsSection = () => {
@@ -23,7 +23,7 @@ const AchievementsSection = () => {
             Achievements
           </h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
-            We are proud of the community we're building and the students we've empowered on their journey into technology.
+            Ready to mentor Students for IoT Projects.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
