@@ -9,24 +9,6 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const projects = [
   {
-    id: 'project-1',
-    title: 'Smart Home Automation',
-    description: 'Build a system to control lights, temperature, and appliances in your home using an ESP32 and MicroPython.',
-    tags: ['ESP32', 'MicroPython', 'IoT'],
-  },
-  {
-    id: 'project-2',
-    title: 'Weather Monitoring Station',
-    description: 'Create a device that collects and displays real-time weather data, sending alerts based on environmental changes.',
-    tags: ['Sensors', 'Data Logging', 'API'],
-  },
-  {
-    id: 'project-3',
-    title: 'Automated Plant Watering',
-    description: 'Design an intelligent system that monitors soil moisture and waters plants automatically, ensuring they stay healthy.',
-    tags: ['Embedded Systems', 'IoT', 'Automation'],
-  },
-  {
     id: 'project-4',
     title: 'IoT Based Biometric Remote Health Monitoring System Using LoRaWAN',
     description: 'Monitor health remotely, track vital signs & alert medical professionals in case of abnormal readings. Provide real-time data for informed healthcare decisions, improve access to healthcare in remote areas using LoRaWAN, Biometric Sensors, GPS, Blynk app, IBM Cloud Platform.',
