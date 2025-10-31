@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -34,7 +33,7 @@ const HeroSection = () => {
           {heroImage && (
             <Image
               src={heroImage.imageUrl}
-              alt="Abstract background"
+              alt={heroImage.description}
               width={600}
               height={600}
               priority
