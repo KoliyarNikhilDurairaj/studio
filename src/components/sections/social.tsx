@@ -3,13 +3,13 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 import Link from 'next/link';
 
 const socialLinks = [
   {
     name: 'LinkedIn',
-    icon: <Linkedin className="h-6 w-6" />,
+    icon: <Linkedin className="h-8 w-8" />,
     href: 'https://www.linkedin.com/in/koliyarnikhildurairaj/',
   },
 ];
@@ -30,7 +30,7 @@ const SocialSection = () => {
           </p>
           <div className="flex justify-center gap-4">
             {socialLinks.map((link) => (
-              <Button key={link.name} variant="outline" size="icon" asChild className="h-14 w-14 rounded-full border-2 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300">
+              <Button key={link.name} variant="outline" size="icon" asChild className="h-20 w-20 rounded-full border-2 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300 hover:scale-110">
                 <Link href={link.href} target="_blank" rel="noopener noreferrer">
                   {link.icon}
                   <span className="sr-only">{link.name}</span>
