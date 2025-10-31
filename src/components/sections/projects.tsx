@@ -38,6 +38,12 @@ const projects = [
     description: 'This is the Advanced Robotic Automated Vehicle The Vehicle is Driven by 4 DC Motors Fixed to the Chassis of the Vehicle and Above the Chassis the Advanced Sensors are Integrated on a Electric Powered Vehicle and displaying the readings of the sensors in various units.',
     tags: ['Robotics', 'Automation', 'Sensors'],
   },
+  {
+    id: 'project-6',
+    title: 'Bluetooth Controlled Smart Electric Vehicle',
+    description: 'Controlling a Smart Electrical Vehicle through Bluetooth Connection with a Smartphone. The Smart Electric Vehicle is Battery Powered.',
+    tags: ['Bluetooth', 'Electric Vehicle', 'App Controlled'],
+  },
 ];
 
 const ProjectsSection = () => {

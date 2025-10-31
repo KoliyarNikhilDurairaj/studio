@@ -41,6 +41,12 @@
       "description": "Advanced Robotic Automated Vehicle",
       "imageUrl": "https://live.staticflickr.com/65535/54890841762_87bdec0500_c.jpg",
       "imageHint": "robotic vehicle"
+    },
+    {
+      "id": "project-6",
+      "description": "Bluetooth Controlled Smart Electric Vehicle",
+      "imageUrl": "https://live.staticflickr.com/65535/54891965334_510a6c72f4_c.jpg",
+      "imageHint": "electric vehicle"
     }
   ]
 }
