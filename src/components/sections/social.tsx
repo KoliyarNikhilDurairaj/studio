@@ -12,16 +12,6 @@ const socialLinks = [
     icon: <Linkedin className="h-6 w-6" />,
     href: 'https://www.linkedin.com/in/koliyarnikhildurairaj/',
   },
-  {
-    name: 'Twitter',
-    icon: <Twitter className="h-6 w-6" />,
-    href: '#',
-  },
-  {
-    name: 'GitHub',
-    icon: <Github className="h-6 w-6" />,
-    href: '#',
-  },
 ];
 
 const SocialSection = () => {
