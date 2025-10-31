@@ -10,7 +10,7 @@ const socialLinks = [
   {
     name: 'LinkedIn',
     icon: <Linkedin className="h-6 w-6" />,
-    href: '#',
+    href: 'https://www.linkedin.com/in/koliyarnikhildurairaj/',
   },
   {
     name: 'Twitter',
