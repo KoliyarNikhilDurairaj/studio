@@ -35,6 +35,12 @@
       "description": "IoT Based Biometric Remote Health Monitoring System Using LoRaWAN",
       "imageUrl": "https://live.staticflickr.com/65535/54891934368_cb7e08a99a_c.jpg",
       "imageHint": "health monitoring"
+    },
+    {
+      "id": "project-5",
+      "description": "Advanced Robotic Automated Vehicle",
+      "imageUrl": "https://live.staticflickr.com/65535/54890841762_87bdec0500_c.jpg",
+      "imageHint": "robotic vehicle"
     }
   ]
 }

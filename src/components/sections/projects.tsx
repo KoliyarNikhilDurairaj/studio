@@ -32,6 +32,12 @@ const projects = [
     description: 'Monitor health remotely, track vital signs & alert medical professionals in case of abnormal readings. Provide real-time data for informed healthcare decisions, improve access to healthcare in remote areas using LoRaWAN, Biometric Sensors, GPS, Blynk app, IBM Cloud Platform.',
     tags: ['LoRaWAN', 'Biometric', 'GPS', 'Blynk', 'IBM Cloud'],
   },
+  {
+    id: 'project-5',
+    title: 'Advanced Robotic Automated Vehicle',
+    description: 'This is the Advanced Robotic Automated Vehicle The Vehicle is Driven by 4 DC Motors Fixed to the Chassis of the Vehicle and Above the Chassis the Advanced Sensors are Integrated on a Electric Powered Vehicle and displaying the readings of the sensors in various units.',
+    tags: ['Robotics', 'Automation', 'Sensors'],
+  },
 ];
 
 const ProjectsSection = () => {
