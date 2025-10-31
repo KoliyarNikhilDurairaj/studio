@@ -27,9 +27,11 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
-          <ShieldCheck className="h-7 w-7 text-primary" />
-          <span className="text-xl font-bold">Proteciot</span>
+        <Link href="/" className="flex items-center space-x-2 group">
+          <div className="p-1 rounded-lg bg-gradient-to-r from-primary via-accent to-pink-500">
+             <ShieldCheck className="h-6 w-6 text-white" />
+          </div>
+          <span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-pink-500 group-hover:opacity-90 transition-opacity">Proteciot</span>
         </Link>
         
         <nav className="hidden md:flex gap-6">
