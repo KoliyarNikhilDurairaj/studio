@@ -37,7 +37,7 @@ const AboutSection = () => {
                     width={600}
                     height={600}
                     data-ai-hint={aboutImage.imageHint}
-                    className="object-cover w-full h-full"
+                    className="object-cover w-full h-full rounded-2xl"
                   />
                 </CardContent>
               </Card>
