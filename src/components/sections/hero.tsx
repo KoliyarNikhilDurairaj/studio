@@ -12,7 +12,7 @@ const HeroSection = () => {
   return (
     <section id="home" className="container mx-auto px-4 py-20 lg:py-32">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
-        <div className="animate-fade-in-up text-left">
+        <div className="order-1 lg:order-1 animate-fade-in-up text-left">
           <h1 
             className="text-5xl md:text-6xl lg:text-7xl font-extrabold font-headline tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-pink-500"
           >
@@ -29,7 +29,7 @@ const HeroSection = () => {
             </Link>
           </Button>
         </div>
-        <div className="flex justify-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+        <div className="order-2 lg:order-2 flex justify-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           {heroImage && (
             <Image
               src={heroImage.imageUrl}
