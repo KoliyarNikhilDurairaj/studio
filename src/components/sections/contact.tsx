@@ -2,11 +2,13 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
+import { Mail } from 'lucide-react';
 
 const ContactSection = () => {
   return (
@@ -22,6 +24,12 @@ const ContactSection = () => {
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
             Have a project idea or want to learn more? Reach out to schedule your first free mentorship session.
           </p>
+          <div className="mt-8 flex justify-center items-center gap-2">
+            <Mail className="h-5 w-5 text-accent" />
+            <Link href="mailto:proteciot@zohomail.in" className="text-lg text-accent font-medium hover:underline">
+              proteciot@zohomail.in
+            </Link>
+          </div>
         </div>
         <Card className="max-w-2xl mx-auto shadow-2xl bg-card/50">
           <CardContent className="p-8">
