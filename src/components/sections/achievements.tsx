@@ -6,7 +6,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const achievements = [
   { value: '6', label: 'Projects as Team Leader' },
-  { value: '100+', label: 'Students Mentored' },
   { value: '100%', label: 'Free of Cost' },
   { value: '8', label: 'Awards Won' },
 ];
@@ -26,7 +25,7 @@ const AchievementsSection = () => {
             Ready to mentor Students for IoT Projects.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {achievements.map((achievement, index) => (
             <Card key={index} className="text-center shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-card/50">
               <CardHeader>
