@@ -26,6 +26,12 @@ const projects = [
     description: 'Design an intelligent system that monitors soil moisture and waters plants automatically, ensuring they stay healthy.',
     tags: ['Embedded Systems', 'IoT', 'Automation'],
   },
+  {
+    id: 'project-4',
+    title: 'IoT Based Biometric Remote Health Monitoring System Using LoRaWAN',
+    description: 'Monitor health remotely, track vital signs & alert medical professionals in case of abnormal readings. Provide real-time data for informed healthcare decisions, improve access to healthcare in remote areas using LoRaWAN, Biometric Sensors, GPS, Blynk app, IBM Cloud Platform.',
+    tags: ['LoRaWAN', 'Biometric', 'GPS', 'Blynk', 'IBM Cloud'],
+  },
 ];
 
 const ProjectsSection = () => {
