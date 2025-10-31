@@ -3,28 +3,28 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Zap, Wifi, Cpu, Code } from 'lucide-react';
+import { Lightbulb, Presentation, Code, Share2 } from 'lucide-react';
 
 const specializations = [
   {
-    icon: <Cpu className="h-10 w-10 text-primary" />,
-    name: 'Embedded Systems',
-    description: 'Mastering microcontrollers like ESP32 and applying them to solve real-world problems.',
+    icon: <Lightbulb className="h-10 w-10 text-primary" />,
+    name: 'IoT Project Ideas',
+    description: 'Brainstorming innovative and practical IoT project concepts tailored to your interests and skill level.',
   },
   {
-    icon: <Zap className="h-10 w-10 text-primary" />,
-    name: 'MicroPython & C++',
-    description: 'Writing clean and efficient code for resource-constrained devices.',
-  },
-  {
-    icon: <Wifi className="h-10 w-10 text-primary" />,
-    name: 'IoT Protocols',
-    description: 'Understanding and implementing MQTT, HTTP, and other key communication protocols.',
+    icon: <Presentation className="h-10 w-10 text-primary" />,
+    name: 'IoT Presentations',
+    description: 'Crafting compelling presentations to showcase your project\'s features, architecture, and impact.',
   },
   {
     icon: <Code className="h-10 w-10 text-primary" />,
-    name: 'Full Project Lifecycle',
-    description: 'From brainstorming and circuit design to coding and final presentation.',
+    name: 'IoT Programming',
+    description: 'Writing efficient and reliable code for microcontrollers and connected devices in languages like C++ and MicroPython.',
+  },
+  {
+    icon: <Share2 className="h-10 w-10 text-primary" />,
+    name: 'IoT Circuit Diagrams',
+    description: 'Designing and documenting clear and accurate circuit diagrams for your hardware implementation.',
   },
 ];
 
