@@ -19,7 +19,7 @@ const HeroSection = () => {
           fill
           priority
           data-ai-hint={heroImage.imageHint}
-          className="object-cover w-full h-full blur-md scale-105"
+          className="object-cover w-full h-full blur-sm scale-105"
         />
       )}
       <div className="absolute inset-0 bg-background/60 backdrop-blur-sm"></div>
@@ -27,13 +27,13 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 text-center animate-fade-in-up">
         <h1 
           className="text-5xl md:text-7xl lg:text-8xl font-extrabold font-headline tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-pink-500"
-          style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.3)' }}
+          style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.5)' }}
         >
           Mentorship for IoT Innovators
         </h1>
         <p 
           className="max-w-3xl mx-auto text-lg md:text-xl lg:text-2xl text-foreground/90 mb-8 font-medium"
-          style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.5)' }}
+          style={{ textShadow: '1px 1px 6px rgba(0,0,0,0.7)' }}
         >
           Get free, one-on-one guidance for your IoT projects through live video calls with experienced mentors.
         </p>
