@@ -5,8 +5,8 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const achievements = [
+  { value: '6', label: 'Projects as Team Leader' },
   { value: '100+', label: 'Students Mentored' },
-  { value: '6', label: 'Projects Completed' },
   { value: '100%', label: 'Free of Cost' },
   { value: '8', label: 'Awards Won' },
 ];
