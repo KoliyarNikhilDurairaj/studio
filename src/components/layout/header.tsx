@@ -15,16 +15,16 @@ const Header = () => {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   
   const gradients = [
-    'from-pink-500/10 via-fuchsia-500/10 to-purple-600/10',
-    'from-green-400/10 via-cyan-500/10 to-blue-600/10',
-    'from-yellow-400/10 via-orange-500/10 to-red-600/10',
-    'from-indigo-500/10 via-purple-500/10 to-pink-500/10',
-    'from-teal-400/10 via-emerald-500/10 to-lime-600/10',
-    'from-red-500/10 via-rose-500/10 to-pink-500/10',
-    'from-sky-400/10 via-blue-500/10 to-indigo-600/10',
-    'from-amber-400/10 via-yellow-500/10 to-orange-600/10',
-    'from-violet-500/10 via-fuchsia-600/10 to-purple-700/10',
-    'from-cyan-400/10 via-sky-500/10 to-blue-600/10'
+    'from-pink-500/40 via-fuchsia-500/40 to-purple-600/40',
+    'from-green-400/40 via-cyan-500/40 to-blue-600/40',
+    'from-yellow-400/40 via-orange-500/40 to-red-600/40',
+    'from-indigo-500/40 via-purple-500/40 to-pink-500/40',
+    'from-teal-400/40 via-emerald-500/40 to-lime-600/40',
+    'from-red-500/40 via-rose-500/40 to-pink-500/40',
+    'from-sky-400/40 via-blue-500/40 to-indigo-600/40',
+    'from-amber-400/40 via-yellow-500/40 to-orange-600/40',
+    'from-violet-500/40 via-fuchsia-600/40 to-purple-700/40',
+    'from-cyan-400/40 via-sky-500/40 to-blue-600/40'
   ];
 
   return (
