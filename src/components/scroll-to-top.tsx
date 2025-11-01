@@ -43,20 +43,26 @@ const ScrollToTop = () => {
       toggleVisibility();
       
       const sections = document.querySelectorAll('section[id]');
-      let currentSection = 'home';
+      let currentSection = '';
       
       sections.forEach(section => {
-        const sectionTop = (section as HTMLElement).offsetTop;
-        if (window.scrollY >= sectionTop - 100) {
+        const element = section as HTMLElement;
+        const sectionTop = element.offsetTop;
+        const sectionHeight = element.offsetHeight;
+        if (window.scrollY >= sectionTop - (window.innerHeight / 2) && window.scrollY < sectionTop + sectionHeight - (window.innerHeight / 2)) {
           currentSection = section.id;
         }
       });
-
-      setActiveSection(currentSection);
+      
+      if (currentSection) {
+        setActiveSection(currentSection);
+      } else if (window.scrollY < 300) {
+        setActiveSection('home');
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    toggleVisibility(); 
+    handleScroll(); 
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isMounted]);
