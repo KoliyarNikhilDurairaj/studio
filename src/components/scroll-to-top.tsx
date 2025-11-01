@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -21,17 +21,11 @@ const sectionGradients: Record<string, string> = {
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!isMounted) return;
-
-    const toggleVisibility = () => {
+    const handleScroll = () => {
       if (window.pageYOffset > 300) {
         setIsVisible(true);
       } else {
@@ -39,33 +33,35 @@ const ScrollToTop = () => {
       }
     };
 
-    const handleScroll = () => {
-      toggleVisibility();
-      
-      const sections = document.querySelectorAll('section[id]');
-      let currentSection = 'home';
-      
-      const scrollY = window.scrollY;
-      const threshold = window.innerHeight * 0.33;
-
-      sections.forEach(section => {
-        const element = section as HTMLElement;
-        const sectionTop = element.offsetTop;
-        const sectionHeight = element.offsetHeight;
-        
-        if (scrollY >= sectionTop - threshold && scrollY < sectionTop + sectionHeight - threshold) {
-          currentSection = section.id;
-        }
-      });
-      
-      setActiveSection(currentSection);
-    };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); 
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isMounted]);
+  }, []);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+
+    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    observerRef.current = new IntersectionObserver(handleIntersect, options);
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach(section => observerRef.current?.observe(section));
+
+    return () => {
+      sections.forEach(section => observerRef.current?.unobserve(section));
+    };
+  }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -73,10 +69,6 @@ const ScrollToTop = () => {
       behavior: "smooth",
     });
   };
-  
-  if (!isMounted) {
-    return null;
-  }
   
   const buttonGradient = sectionGradients[activeSection] || sectionGradients.home;
 
