@@ -6,9 +6,23 @@ import { ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+const sectionColors: Record<string, string> = {
+  home: 'bg-accent',
+  about: 'bg-cyan-500',
+  projects: 'bg-orange-500',
+  achievements: 'bg-purple-500',
+  specializations: 'bg-emerald-500',
+  'ai-tech': 'bg-rose-500',
+  goals: 'bg-blue-500',
+  services: 'bg-yellow-500',
+  connect: 'bg-fuchsia-600',
+  contact: 'bg-sky-500',
+};
+
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     setIsMounted(true);
@@ -25,10 +39,25 @@ const ScrollToTop = () => {
       }
     };
 
-    window.addEventListener("scroll", toggleVisibility);
-    toggleVisibility(); // Check on mount
+    const handleScroll = () => {
+      toggleVisibility();
+      
+      const sections = document.querySelectorAll('section[id]');
+      let currentSection = 'home';
+      
+      sections.forEach(section => {
+        const sectionTop = (section as HTMLElement).offsetTop;
+        if (window.pageYOffset >= sectionTop - 100) {
+          currentSection = section.id;
+        }
+      });
+      setActiveSection(currentSection);
+    };
 
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    window.addEventListener("scroll", handleScroll);
+    toggleVisibility(); 
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [isMounted]);
 
   const scrollToTop = () => {
@@ -41,6 +70,8 @@ const ScrollToTop = () => {
   if (!isMounted) {
     return null;
   }
+  
+  const buttonColor = sectionColors[activeSection] || 'bg-accent';
 
   return (
     <div className="fixed bottom-16 right-4 z-50">
@@ -49,7 +80,10 @@ const ScrollToTop = () => {
         size="icon"
         onClick={scrollToTop}
         className={cn(
-          "bg-accent/80 hover:bg-accent text-accent-foreground rounded-full transition-opacity duration-300 animate-nudge-up",
+          "text-accent-foreground rounded-full transition-all duration-300 animate-nudge-up",
+          "hover:scale-110",
+          buttonColor,
+          `hover:${buttonColor}/90`,
           isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
         )}
         aria-label="Scroll to top"
