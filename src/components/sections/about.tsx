@@ -3,6 +3,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
@@ -17,9 +18,11 @@ const AboutSection = () => {
       <div className="container mx-auto px-12 sm:px-16 lg:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
-            <h2 className="text-4xl lg:text-5xl font-bold font-headline mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent drop-shadow-sm">
-              About
-            </h2>
+            <Link href="/about" className="group inline-block">
+              <h2 className="text-4xl lg:text-5xl font-bold font-headline mb-6 text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-cyan-500 to-blue-600 drop-shadow-sm transition-transform duration-300 group-hover:scale-105">
+                About
+              </h2>
+            </Link>
             <p className="text-lg text-foreground/80 mb-4">
               Proteciot is a free educational platform founded by Koliyar Nikhil Durairaj, who currently leads the initiative as Founder and IoT Systems Engineer. The platform mentors engineering students in IoT projects through live Zoom sessions, offering guidance on project ideas, circuit diagrams, presentations, and teamwork. 
             </p>
