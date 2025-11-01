@@ -65,6 +65,7 @@ const Header = () => {
                   <SheetClose asChild key={link.href}>
                     <Link
                       href={link.href}
+                      onClick={() => setIsSheetOpen(false)}
                       className={cn(
                         'text-lg font-medium text-foreground/80 hover:text-foreground',
                         pathname === link.href && 'text-primary'
