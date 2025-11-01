@@ -12,34 +12,13 @@ const HeroSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-      }
-    );
-
     const currentRef = sectionRef.current;
     if (currentRef) {
-      observer.observe(currentRef);
+      // Animate hero section immediately on load without observer
+      setTimeout(() => {
+        currentRef.classList.add('is-visible');
+      }, 100);
     }
-    
-    // Animate hero section immediately on load
-    setTimeout(() => {
-      currentRef?.classList.add('is-visible');
-    }, 100);
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
   }, []);
 
   return (
