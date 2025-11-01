@@ -47,18 +47,21 @@ const ScrollToTop = () => {
       
       sections.forEach(section => {
         const sectionTop = (section as HTMLElement).offsetTop;
-        if (window.pageYOffset >= sectionTop - 100) {
+        if (window.scrollY >= sectionTop - 100) {
           currentSection = section.id;
         }
       });
-      setActiveSection(currentSection);
+
+      if (activeSection !== currentSection) {
+        setActiveSection(currentSection);
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     toggleVisibility(); 
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isMounted]);
+  }, [isMounted, activeSection]);
 
   const scrollToTop = () => {
     window.scrollTo({
