@@ -2,6 +2,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 
 const GoalsSection = () => {
@@ -13,9 +14,11 @@ const GoalsSection = () => {
     >
       <div className="container mx-auto px-12 sm:px-16 lg:px-24">
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent drop-shadow-sm">
-            Goals
-          </h2>
+          <Link href="/goals" className="group inline-block">
+            <h2 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600 drop-shadow-sm transition-transform duration-300 group-hover:scale-105">
+              Goals
+            </h2>
+          </Link>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
             Our approach is designed for accessibility and personalized learning, offered completely free of charge.
           </p>

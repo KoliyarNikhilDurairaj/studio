@@ -2,6 +2,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle2 } from 'lucide-react';
 import ScrollAnimationWrapper from '../scroll-animation-wrapper';
@@ -30,9 +31,11 @@ const ServicesSection = () => {
     >
       <div className="container mx-auto px-12 sm:px-16 lg:px-24">
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent drop-shadow-sm">
-            Services
-          </h2>
+          <Link href="/services" className="group inline-block">
+            <h2 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-600 drop-shadow-sm transition-transform duration-300 group-hover:scale-105">
+              Services
+            </h2>
+          </Link>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
             Our services are designed to provide comprehensive support for your entire IoT project journey.
           </p>
