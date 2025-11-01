@@ -23,10 +23,10 @@ const AboutSection = () => {
                 About
               </h2>
             </Link>
-            <p className="text-lg text-foreground/80 mb-4 leading-relaxed text-justify max-w-prose">
+            <p className="text-lg text-foreground/80 mb-4 leading-relaxed text-left max-w-prose hyphens-auto">
               Proteciot is a free educational platform founded by Koliyar Nikhil Durairaj, who currently leads the initiative as Founder and IoT Systems Engineer. The platform mentors engineering students in IoT projects through live Zoom sessions, offering guidance on project ideas, circuit diagrams, presentations, and teamwork. 
             </p>
-            <p className="text-lg text-foreground/80 leading-relaxed text-justify max-w-prose">
+            <p className="text-lg text-foreground/80 leading-relaxed text-left max-w-prose hyphens-auto">
               Proteciot empowers students to build real-world solutions while making tech education accessible to all.
             </p>
           </div>

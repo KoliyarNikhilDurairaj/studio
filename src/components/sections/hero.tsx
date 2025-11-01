@@ -21,7 +21,7 @@ const HeroSection = () => {
               Mentorship for IoT Innovators
             </h1>
             <p 
-              className="max-w-xl text-lg md:text-xl lg:text-2xl text-foreground/90 mb-8 font-medium leading-relaxed text-justify"
+              className="max-w-xl text-lg md:text-xl lg:text-2xl text-foreground/90 mb-8 font-medium leading-relaxed text-left hyphens-auto"
             >
               Get free, one-on-one guidance for your IoT projects through live video calls with experienced mentors.
             </p>

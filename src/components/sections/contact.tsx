@@ -35,7 +35,7 @@ const ContactSection = () => {
               Contact
             </h2>
           </Link>
-          <p className="text-lg text-muted-foreground mt-4 max-w-xl mx-auto leading-relaxed text-justify">
+          <p className="text-lg text-muted-foreground mt-4 max-w-xl mx-auto leading-relaxed">
             Have a project idea or want to learn more? Reach out to schedule your first free mentorship session.
           </p>
           <div className="mt-8 flex justify-center items-center gap-2">

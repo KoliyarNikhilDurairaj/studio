@@ -43,7 +43,7 @@ const AiTechnologiesSection = () => {
               AI Tech
             </h2>
           </Link>
-          <p className="text-lg text-muted-foreground mt-4 max-w-xl mx-auto leading-relaxed text-justify">
+          <p className="text-lg text-muted-foreground mt-4 max-w-xl mx-auto leading-relaxed">
             We support more than just code. Our mentorship covers the full spectrum of skills needed for successful project delivery.
           </p>
         </div>
@@ -56,7 +56,7 @@ const AiTechnologiesSection = () => {
                 </CardHeader>
                 <CardContent className="p-0 flex flex-col items-center">
                   <CardTitle className="text-xl font-bold mb-2">{tech.name}</CardTitle>
-                  <p className="text-muted-foreground text-sm leading-relaxed text-justify">{tech.description}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{tech.description}</p>
                 </CardContent>
               </Card>
             </ScrollAnimationWrapper>

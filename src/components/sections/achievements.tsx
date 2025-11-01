@@ -26,7 +26,7 @@ const AchievementsSection = () => {
               Achievements
             </h2>
           </Link>
-          <p className="text-lg text-muted-foreground mt-4 max-w-xl mx-auto leading-relaxed text-justify">
+          <p className="text-lg text-muted-foreground mt-4 max-w-xl mx-auto leading-relaxed">
             Ready to mentor Students for IoT Projects.
           </p>
         </div>

@@ -36,7 +36,7 @@ const ServicesSection = () => {
               Services
             </h2>
           </Link>
-          <p className="text-lg text-muted-foreground mt-4 max-w-xl mx-auto leading-relaxed text-justify">
+          <p className="text-lg text-muted-foreground mt-4 max-w-xl mx-auto leading-relaxed">
             Our services are designed to provide comprehensive support for your entire IoT project journey.
           </p>
         </div>
@@ -51,7 +51,7 @@ const ServicesSection = () => {
                   <ul className="space-y-4">
                     <li className="flex items-start">
                       <CheckCircle2 className="h-6 w-6 text-accent mr-3 mt-1 shrink-0" />
-                      <p className="text-muted-foreground leading-relaxed text-justify">{service.description}</p>
+                      <p className="text-muted-foreground leading-relaxed text-left hyphens-auto">{service.description}</p>
                     </li>
                   </ul>
                 </CardContent>
