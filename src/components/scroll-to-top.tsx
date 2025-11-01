@@ -52,16 +52,14 @@ const ScrollToTop = () => {
         }
       });
 
-      if (activeSection !== currentSection) {
-        setActiveSection(currentSection);
-      }
+      setActiveSection(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     toggleVisibility(); 
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isMounted, activeSection]);
+  }, [isMounted]);
 
   const scrollToTop = () => {
     window.scrollTo({
