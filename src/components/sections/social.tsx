@@ -20,7 +20,7 @@ const SocialSection = () => {
       id="connect" 
       className="py-20 lg:py-32"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-12 sm:px-16 lg:px-24">
         <div className="text-center">
           <h2 className="text-4xl lg:text-5xl font-bold font-headline text-primary mb-4">
             Connect
