@@ -15,16 +15,16 @@ const Header = () => {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   
   const gradients = [
-    'from-pink-500/40 via-fuchsia-500/40 to-purple-600/40',
-    'from-green-400/40 via-cyan-500/40 to-blue-600/40',
-    'from-yellow-400/40 via-orange-500/40 to-red-600/40',
-    'from-indigo-500/40 via-purple-500/40 to-pink-500/40',
-    'from-teal-400/40 via-emerald-500/40 to-lime-600/40',
-    'from-red-500/40 via-rose-500/40 to-pink-500/40',
-    'from-sky-400/40 via-blue-500/40 to-indigo-600/40',
-    'from-amber-400/40 via-yellow-500/40 to-orange-600/40',
-    'from-violet-500/40 via-fuchsia-600/40 to-purple-700/40',
-    'from-cyan-400/40 via-sky-500/40 to-blue-600/40'
+    'from-pink-500 via-fuchsia-500 to-purple-600',
+    'from-green-400 via-cyan-500 to-blue-600',
+    'from-yellow-400 via-orange-500 to-red-600',
+    'from-indigo-500 via-purple-500 to-pink-500',
+    'from-teal-400 via-emerald-500 to-lime-600',
+    'from-red-500 via-rose-500 to-pink-500',
+    'from-sky-400 via-blue-500 to-indigo-600',
+    'from-amber-400 via-yellow-500 to-orange-600',
+    'from-violet-500 via-fuchsia-600 to-purple-700',
+    'from-cyan-400 via-sky-500 to-blue-600'
   ];
 
   return (
@@ -46,8 +46,8 @@ const Header = () => {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "group relative rounded-md px-3 py-2 text-sm font-medium transition-colors text-foreground/80 hover:text-foreground",
-                  isActive ? "text-foreground" : ""
+                  "group relative rounded-md px-3 py-2 text-sm font-medium transition-colors text-foreground/80 hover:text-white",
+                  isActive ? "text-white" : ""
                 )}
               >
                 <span className="relative z-10">{link.name}</span>
