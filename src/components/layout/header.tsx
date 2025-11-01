@@ -1,12 +1,14 @@
 
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ShieldCheck } from 'lucide-react';
+import { ShieldCheck, Menu, X } from 'lucide-react';
 import { navLinks } from '@/lib/nav-links';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 
 const gradients = [
   'from-pink-500 to-purple-600',
@@ -23,6 +25,7 @@ const gradients = [
 
 const Header = () => {
   const pathname = usePathname();
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -36,7 +39,7 @@ const Header = () => {
         
         <nav className="hidden md:flex gap-6">
           {navLinks.map((link, index) => {
-            const isActive = pathname === link.href || (link.href === '/' && pathname.startsWith('/#'));
+            const isActive = pathname === link.href;
             return (
               <Link
                 key={link.href}
@@ -47,7 +50,6 @@ const Header = () => {
               >
                 <span className="relative z-10">{link.name}</span>
 
-                {/* Hover background effect */}
                 <span
                   className={cn(
                     "absolute inset-0 rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100",
@@ -55,7 +57,6 @@ const Header = () => {
                   )}
                 />
                 
-                {/* Active underline effect */}
                 {isActive && (
                   <span
                     className={cn(
@@ -68,6 +69,35 @@ const Header = () => {
             );
           })}
         </nav>
+
+        <div className="md:hidden">
+          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Open Menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[340px]">
+              <nav className="flex flex-col gap-4 mt-8">
+                {navLinks.map((link) => (
+                  <SheetClose asChild key={link.href}>
+                    <Link
+                      href={link.href}
+                      className={cn(
+                        'text-lg font-medium text-foreground/80 hover:text-foreground',
+                        pathname === link.href && 'text-primary'
+                      )}
+                    >
+                      {link.name}
+                    </Link>
+                  </SheetClose>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
+
       </div>
     </header>
   );
