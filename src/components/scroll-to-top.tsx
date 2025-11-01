@@ -8,8 +8,15 @@ import { cn } from "@/lib/utils";
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isMounted) return;
+
     const toggleVisibility = () => {
       if (window.pageYOffset > 300) {
         setIsVisible(true);
@@ -19,9 +26,10 @@ const ScrollToTop = () => {
     };
 
     window.addEventListener("scroll", toggleVisibility);
+    toggleVisibility(); // Check on mount
 
     return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
+  }, [isMounted]);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -29,6 +37,10 @@ const ScrollToTop = () => {
       behavior: "smooth",
     });
   };
+  
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <div className="fixed bottom-16 right-4 z-50">
