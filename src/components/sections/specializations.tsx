@@ -2,6 +2,7 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Lightbulb, Presentation, Code, Share2 } from 'lucide-react';
 import ScrollAnimationWrapper from '../scroll-animation-wrapper';
@@ -38,9 +39,11 @@ const SpecializationsSection = () => {
     >
       <div className="container mx-auto px-12 sm:px-16 lg:px-24">
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent drop-shadow-sm">
-            Specializations
-          </h2>
+          <Link href="/specializations" className="group inline-block">
+            <h2 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-emerald-500 to-lime-600 drop-shadow-sm transition-transform duration-300 group-hover:scale-105">
+              Specializations
+            </h2>
+          </Link>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
             We specialize in the fundamental skills and technologies that power the Internet of Things.
           </p>
