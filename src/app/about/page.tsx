@@ -12,7 +12,7 @@ export default function AboutPage() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1 container mx-auto px-12 sm:px-16 lg:px-24 py-8 md:py-16">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in-up">
             <h1 className="text-4xl lg:text-5xl font-bold font-headline text-primary">
                 About Proteciot
             </h1>
