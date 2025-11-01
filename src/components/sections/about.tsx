@@ -12,7 +12,7 @@ const AboutSection = () => {
   return (
     <section 
       id="about" 
-      className="py-20 lg:py-32"
+      className="py-16 md:py-24 lg:py-32"
     >
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

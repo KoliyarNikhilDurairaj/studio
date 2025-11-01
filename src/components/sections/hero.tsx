@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -10,7 +11,7 @@ const HeroSection = () => {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
   
   return (
-    <section id="home" className="py-20 lg:py-32">
+    <section id="home" className="py-16 md:py-24 lg:py-32">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="order-1 lg:order-1 animate-fade-in-up text-left">
