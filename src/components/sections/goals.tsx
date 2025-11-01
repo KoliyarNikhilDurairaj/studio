@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -13,7 +12,7 @@ const GoalsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold font-headline text-primary">
-            Our Goals
+            Goals
           </h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
             Our approach is designed for accessibility and personalized learning, offered completely free of charge.
