@@ -44,7 +44,7 @@ const ProjectsSection = () => {
               Projects
             </h2>
           </Link>
-          <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground mt-4 max-w-xl mx-auto leading-relaxed text-justify">
             Get inspired by what you can build. We guide you through projects like these, from concept to completion.
           </p>
         </div>
@@ -68,7 +68,7 @@ const ProjectsSection = () => {
                   )}
                   <CardHeader>
                     <CardTitle>{project.title}</CardTitle>
-                    <CardDescription>{project.description}</CardDescription>
+                    <CardDescription className="leading-relaxed text-justify">{project.description}</CardDescription>
                   </CardHeader>
                   <CardContent className="flex-grow" />
                   <CardFooter>

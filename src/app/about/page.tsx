@@ -22,7 +22,7 @@ export default function AboutPage() {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
-            <p className="text-lg text-foreground/80 leading-relaxed">
+            <p className="text-lg text-foreground/80 leading-relaxed text-justify max-w-prose">
               Proteciot is an educational platform founded by Koliyar Nikhil Durairaj, the IoT Systems Engineer, with a mission to mentor and empower engineering students in the field of Internet of Things (IoT). Through free, personalized guidance delivered via live video sessions, Proteciot helps students bridge the gap between academic theory and practical innovation. The platform offers structured support in embedded programming, circuit design, project ideation, and technical presentation, fostering a hands-on learning environment that emphasizes clarity, accessibility, and professional growth. By cultivating technical excellence and creative problem-solving, Proteciot prepares aspiring engineers to lead in the evolving landscape of smart systems and connected technologies.
             </p>
           </div>

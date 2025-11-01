@@ -44,7 +44,7 @@ const SpecializationsSection = () => {
               Specializations
             </h2>
           </Link>
-          <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground mt-4 max-w-xl mx-auto leading-relaxed text-justify">
             We specialize in the fundamental skills and technologies that power the Internet of Things.
           </p>
         </div>
@@ -57,7 +57,7 @@ const SpecializationsSection = () => {
                 </CardHeader>
                 <CardContent className="p-0">
                   <CardTitle className="text-xl font-bold mb-2">{spec.name}</CardTitle>
-                  <p className="text-muted-foreground">{spec.description}</p>
+                  <p className="text-muted-foreground leading-relaxed text-justify">{spec.description}</p>
                 </CardContent>
               </Card>
             </ScrollAnimationWrapper>

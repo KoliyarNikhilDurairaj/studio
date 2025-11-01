@@ -28,7 +28,7 @@ const SocialSection = () => {
               Connect
             </h2>
           </Link>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto leading-relaxed text-justify">
             Follow our journey, get the latest updates, and join the conversation on our social media channels.
           </p>
           <div className="flex justify-center gap-4">
