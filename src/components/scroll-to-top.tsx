@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import { usePathname } from 'next/navigation';
 import { ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -23,6 +24,7 @@ const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,28 +42,37 @@ const ScrollToTop = () => {
   }, []);
 
   useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5,
-    };
+    if (pathname === '/') {
+      const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5,
+      };
 
-    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    };
+      const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      };
 
-    observerRef.current = new IntersectionObserver(handleIntersect, options);
-    const sections = document.querySelectorAll('section[id]');
-    sections.forEach(section => observerRef.current?.observe(section));
+      observerRef.current = new IntersectionObserver(handleIntersect, options);
+      const sections = document.querySelectorAll('section[id]');
+      sections.forEach(section => observerRef.current?.observe(section));
 
-    return () => {
-      sections.forEach(section => observerRef.current?.unobserve(section));
-    };
-  }, []);
+      return () => {
+        sections.forEach(section => observerRef.current?.unobserve(section));
+      };
+    } else {
+      const pageKey = pathname.substring(1);
+      if (sectionGradients[pageKey]) {
+        setActiveSection(pageKey);
+      } else {
+        setActiveSection('home');
+      }
+    }
+  }, [pathname]);
 
   const scrollToTop = () => {
     window.scrollTo({
