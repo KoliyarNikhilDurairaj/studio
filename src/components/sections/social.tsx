@@ -1,7 +1,7 @@
 
 "use client";
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Linkedin } from 'lucide-react';
 import Link from 'next/link';
@@ -15,10 +15,39 @@ const socialLinks = [
 ];
 
 const SocialSection = () => {
+    const sectionRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            },
+            {
+                threshold: 0.1,
+            }
+        );
+
+        const currentRef = sectionRef.current;
+        if (currentRef) {
+            observer.observe(currentRef);
+        }
+
+        return () => {
+            if (currentRef) {
+                observer.unobserve(currentRef);
+            }
+        };
+    }, []);
+
   return (
     <section 
       id="connect" 
-      className="py-20 lg:py-32 animate-fade-in-up"
+      ref={sectionRef}
+      className="py-20 lg:py-32"
     >
       <div className="container mx-auto px-12 sm:px-16 lg:px-24">
         <div className="text-center">

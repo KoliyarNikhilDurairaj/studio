@@ -6,25 +6,16 @@
   html {
     @apply scroll-smooth;
   }
-}
-
-@layer utilities {
-  @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
-
-  .animate-fade-in-up {
-    animation: fade-in-up 0.8s ease-out forwards;
+  section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-
 
 @layer base {
   :root {

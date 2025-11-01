@@ -1,7 +1,7 @@
 
 "use client";
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -9,12 +9,44 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const HeroSection = () => {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
+  const sectionRef = useRef<HTMLElement>(null);
   
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    const currentRef = sectionRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+    
+    // Animate hero section immediately on load
+    setTimeout(() => {
+      currentRef?.classList.add('is-visible');
+    }, 100);
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
   return (
-    <section id="home" className="py-24 md:py-32 lg:py-40">
+    <section id="home" ref={sectionRef} className="py-24 md:py-32 lg:py-40">
       <div className="container mx-auto px-12 sm:px-16 lg:px-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="order-1 lg:order-1 animate-fade-in-up text-left">
+          <div className="order-1 lg:order-1 text-left">
             <h1 
               className="text-5xl md:text-6xl lg:text-7xl font-extrabold font-headline tracking-tighter mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-pink-500"
             >
@@ -31,7 +63,7 @@ const HeroSection = () => {
               </Link>
             </Button>
           </div>
-          <div className="order-2 lg:order-2 flex justify-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="order-2 lg:order-2 flex justify-center">
             {heroImage && (
               <Image
                 src={heroImage.imageUrl}
