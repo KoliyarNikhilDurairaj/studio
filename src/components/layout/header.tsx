@@ -29,7 +29,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex h-20 items-center justify-between">
+      <div className="container mx-auto px-12 sm:px-16 lg:px-24 flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center space-x-3 group">
           <div className="p-1.5 rounded-lg bg-gradient-to-r from-primary via-accent to-pink-500">
              <ShieldCheck className="h-7 w-7 text-white" />
