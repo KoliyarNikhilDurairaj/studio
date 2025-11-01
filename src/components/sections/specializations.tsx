@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Lightbulb, Presentation, Code, Share2 } from 'lucide-react';
 
@@ -29,38 +29,10 @@ const specializations = [
 ];
 
 const SpecializationsSection = () => {
-    const sectionRef = useRef<HTMLElement>(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                    }
-                });
-            },
-            {
-                threshold: 0.1,
-            }
-        );
-
-        const currentRef = sectionRef.current;
-        if (currentRef) {
-            observer.observe(currentRef);
-        }
-
-        return () => {
-            if (currentRef) {
-                observer.unobserve(currentRef);
-            }
-        };
-    }, []);
 
   return (
     <section 
       id="specializations" 
-      ref={sectionRef}
       className="py-20 lg:py-32 bg-secondary/30"
     >
       <div className="container mx-auto px-12 sm:px-16 lg:px-24">

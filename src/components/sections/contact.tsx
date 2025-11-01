@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
@@ -15,33 +15,6 @@ const ContactSection = () => {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        },
-        {
-            threshold: 0.1,
-        }
-    );
-
-    const currentRef = sectionRef.current;
-    if (currentRef) {
-        observer.observe(currentRef);
-    }
-
-    return () => {
-        if (currentRef) {
-            observer.unobserve(currentRef);
-        }
-    };
-  }, []);
 
   const handleRequestMentorship = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -53,7 +26,6 @@ const ContactSection = () => {
   return (
     <section 
       id="contact" 
-      ref={sectionRef}
       className="py-20 lg:py-32 bg-secondary/30"
     >
       <div className="container mx-auto px-12 sm:px-16 lg:px-24">

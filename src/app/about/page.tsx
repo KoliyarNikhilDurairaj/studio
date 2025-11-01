@@ -6,42 +6,15 @@ import Footer from "@/components/layout/footer";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Card, CardContent } from "@/components/ui/card";
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
 export default function AboutPage() {
   const aboutImage = PlaceHolderImages.find(p => p.id === 'about-us');
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-      }
-    );
-
-    const currentRef = sectionRef.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, []);
 
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main ref={sectionRef} className="flex-1 container mx-auto px-12 sm:px-16 lg:px-24 py-8 md:py-16">
+      <main className="flex-1 container mx-auto px-12 sm:px-16 lg:px-24 py-8 md:py-16">
         <div className="text-center mb-12">
             <h1 className="text-4xl lg:text-5xl font-bold font-headline text-primary">
                 About Proteciot
