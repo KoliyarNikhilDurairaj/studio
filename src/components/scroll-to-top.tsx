@@ -44,15 +44,16 @@ const ScrollToTop = () => {
       
       const sections = document.querySelectorAll('section[id]');
       let currentSection = 'home';
-      const scrollY = window.scrollY;
       
-      const threshold = window.innerHeight / 3;
+      const scrollY = window.scrollY;
+      const threshold = window.innerHeight * 0.33;
 
       sections.forEach(section => {
         const element = section as HTMLElement;
         const sectionTop = element.offsetTop;
+        const sectionHeight = element.offsetHeight;
         
-        if (scrollY >= sectionTop - threshold) {
+        if (scrollY >= sectionTop - threshold && scrollY < sectionTop + sectionHeight - threshold) {
           currentSection = section.id;
         }
       });
