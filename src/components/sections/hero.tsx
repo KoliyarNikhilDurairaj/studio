@@ -11,8 +11,8 @@ const HeroSection = () => {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
   
   return (
-    <section id="home" className="py-16 md:py-24 lg:py-32">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+    <section id="home" className="py-24 md:py-32 lg:py-40">
+      <div className="container mx-auto px-8 sm:px-12 lg:px-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="order-1 lg:order-1 animate-fade-in-up text-left">
             <h1 
