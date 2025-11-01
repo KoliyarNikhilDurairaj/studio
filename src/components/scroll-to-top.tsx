@@ -31,7 +31,7 @@ const ScrollToTop = () => {
   };
 
   return (
-    <div className="fixed bottom-4 left-4 z-50">
+    <div className="fixed bottom-16 right-4 z-50">
       <Button
         variant="outline"
         size="icon"
