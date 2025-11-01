@@ -37,7 +37,7 @@ const AiTechnologiesSection = () => {
     >
       <div className="container mx-auto px-12 sm:px-16 lg:px-24">
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold font-headline text-primary">
+          <h2 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent drop-shadow-sm">
             AI Tech
           </h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
@@ -47,7 +47,7 @@ const AiTechnologiesSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {technologies.map((tech, index) => (
             <ScrollAnimationWrapper key={index} delay={index * 150}>
-              <Card className="text-center flex flex-col items-center p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 bg-card/50 h-full">
+              <Card className="text-center flex flex-col items-center p-6 shadow-lg hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 bg-card/50 h-full">
                 <CardHeader className="p-0 mb-4">
                   {tech.icon}
                 </CardHeader>

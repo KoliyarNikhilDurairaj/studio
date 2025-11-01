@@ -23,7 +23,7 @@ const SocialSection = () => {
     >
       <div className="container mx-auto px-12 sm:px-16 lg:px-24">
         <div className="text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold font-headline text-primary mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent drop-shadow-sm mb-4">
             Connect
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">

@@ -16,7 +16,7 @@ export default function AboutPage() {
       <Header />
       <main className="flex-1 container mx-auto px-12 sm:px-16 lg:px-24 py-8 md:py-16">
         <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-5xl font-bold font-headline text-primary">
+            <h1 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent drop-shadow-sm">
                 About Proteciot
             </h1>
         </div>
@@ -28,7 +28,7 @@ export default function AboutPage() {
           </div>
           <div className="order-1 lg:order-2 flex justify-center">
             {aboutImage && (
-              <Card className="overflow-hidden rounded-2xl shadow-2xl w-full max-w-md bg-card/50">
+              <Card className="overflow-hidden rounded-2xl shadow-2xl w-full max-w-md bg-card/50 transition-all duration-300 hover:shadow-primary/20 hover:-translate-y-2">
                 <CardContent className="p-0">
                   <Image
                     src={aboutImage.imageUrl}

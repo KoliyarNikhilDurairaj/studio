@@ -38,7 +38,7 @@ const ProjectsSection = () => {
     >
       <div className="container mx-auto px-12 sm:px-16 lg:px-24">
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold font-headline text-primary">
+          <h2 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent drop-shadow-sm">
             Projects
           </h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
@@ -50,7 +50,7 @@ const ProjectsSection = () => {
             const projectImage = PlaceHolderImages.find(p => p.id === project.id);
             return (
               <ScrollAnimationWrapper key={project.id} delay={index * 150}>
-                <Card className="flex flex-col overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 bg-card/50 h-full">
+                <Card className="flex flex-col overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 bg-card/50 h-full">
                   {projectImage && (
                     <div className="aspect-w-3 aspect-h-2">
                       <Image

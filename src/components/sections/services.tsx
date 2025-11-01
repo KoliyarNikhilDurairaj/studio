@@ -30,7 +30,7 @@ const ServicesSection = () => {
     >
       <div className="container mx-auto px-12 sm:px-16 lg:px-24">
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold font-headline text-primary">
+          <h2 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent drop-shadow-sm">
             Services
           </h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
@@ -40,7 +40,7 @@ const ServicesSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <ScrollAnimationWrapper key={index} delay={index * 150}>
-              <Card className="shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 bg-card/50 h-full">
+              <Card className="shadow-lg hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 bg-card/50 h-full">
                 <CardHeader>
                   <CardTitle className="text-xl">{service.title}</CardTitle>
                 </CardHeader>
