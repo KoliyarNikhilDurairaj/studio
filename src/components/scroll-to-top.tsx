@@ -46,18 +46,14 @@ const ScrollToTop = () => {
       let currentSection = 'home';
       const scrollY = window.scrollY;
       const viewportHeight = window.innerHeight;
+      
+      const threshold = viewportHeight / 3;
 
       sections.forEach(section => {
         const element = section as HTMLElement;
         const sectionTop = element.offsetTop;
-        const sectionHeight = element.offsetHeight;
         
-        // A section is considered active if its top is within the viewport, 
-        // or if it occupies a significant portion of the screen.
-        // We'll use a threshold of 1/3 of the viewport height.
-        const threshold = viewportHeight / 3;
-
-        if (scrollY >= sectionTop - threshold && scrollY < sectionTop + sectionHeight - threshold) {
+        if (scrollY >= sectionTop - threshold) {
           currentSection = section.id;
         }
       });
