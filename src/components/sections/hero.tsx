@@ -26,7 +26,7 @@ const HeroSection = () => {
               Get free, one-on-one guidance for your IoT projects through live video calls with experienced mentors.
             </p>
             <Button asChild size="lg" className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-full transition-transform hover:scale-105 shadow-lg animate-pulse-glow">
-              <Link href="/contact" className="w-full h-full bg-gradient-to-r from-[#FF69B4] to-[#8A2BE2] text-white rounded-full px-8 py-3 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
+              <Link href="/contact" className="w-full h-full bg-gradient-to-r from-[#FF69B4] to-[#8A2BE2] text-white rounded-full px-8 py-4 [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]">
                 <span className="absolute w-full h-full bg-gradient-to-r from-[#00BFFF] to-[#1E90FF] rounded-full -inset-full top-0 group-hover:inset-0 group-hover:opacity-100 opacity-0 transition-all duration-300"></span>
                 <span className="relative">Start Your Project</span>
               </Link>
