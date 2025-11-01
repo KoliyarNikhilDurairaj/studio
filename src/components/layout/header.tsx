@@ -10,19 +10,6 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 
-const gradients = [
-  'from-pink-500 to-purple-600',
-  'from-sky-500 to-indigo-600',
-  'from-green-400 to-blue-500',
-  'from-yellow-400 to-orange-500',
-  'from-red-500 to-pink-600',
-  'from-purple-500 to-indigo-600',
-  'from-blue-400 to-teal-500',
-  'from-lime-400 to-green-500',
-  'from-amber-500 to-red-600',
-  'from-fuchsia-500 to-rose-600',
-];
-
 const Header = () => {
   const pathname = usePathname();
   const [isSheetOpen, setIsSheetOpen] = useState(false);
@@ -37,32 +24,26 @@ const Header = () => {
           <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-pink-500 group-hover:opacity-90 transition-opacity">Proteciot</span>
         </Link>
         
-        <nav className="hidden md:flex gap-6">
-          {navLinks.map((link, index) => {
+        <nav className="hidden md:flex gap-1">
+          {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "group relative px-3 py-2 text-sm font-medium transition-colors text-foreground/80 hover:text-foreground",
+                  "group relative rounded-md px-3 py-2 text-sm font-medium transition-colors text-foreground/80 hover:text-foreground",
+                  isActive ? "text-foreground" : ""
                 )}
               >
                 <span className="relative z-10">{link.name}</span>
-
-                <span
-                  className={cn(
-                    "absolute inset-0 rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100",
-                    `bg-gradient-to-r ${gradients[index % gradients.length]}`
-                  )}
-                />
-                
-                {isActive && (
+                {isActive ? (
                   <span
-                    className={cn(
-                      "absolute bottom-0 left-0 h-0.5 w-full",
-                      `bg-gradient-to-r ${gradients[index % gradients.length]}`
-                    )}
+                    className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-primary via-accent to-pink-500"
+                  />
+                ) : (
+                  <span
+                    className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-primary via-accent to-pink-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-center"
                   />
                 )}
               </Link>

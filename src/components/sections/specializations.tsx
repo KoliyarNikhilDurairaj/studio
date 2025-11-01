@@ -4,6 +4,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Lightbulb, Presentation, Code, Share2 } from 'lucide-react';
+import ScrollAnimationWrapper from '../scroll-animation-wrapper';
 
 const specializations = [
   {
@@ -46,15 +47,17 @@ const SpecializationsSection = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {specializations.map((spec, index) => (
-            <Card key={index} className="flex items-center p-6 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-card/50">
-              <CardHeader className="p-0 pr-6">
-                {spec.icon}
-              </CardHeader>
-              <CardContent className="p-0">
-                <CardTitle className="text-xl font-bold mb-2">{spec.name}</CardTitle>
-                <p className="text-muted-foreground">{spec.description}</p>
-              </CardContent>
-            </Card>
+            <ScrollAnimationWrapper key={index} delay={index * 150}>
+              <Card className="flex items-center p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 bg-card/50 h-full">
+                <CardHeader className="p-0 pr-6">
+                  {spec.icon}
+                </CardHeader>
+                <CardContent className="p-0">
+                  <CardTitle className="text-xl font-bold mb-2">{spec.name}</CardTitle>
+                  <p className="text-muted-foreground">{spec.description}</p>
+                </CardContent>
+              </Card>
+            </ScrollAnimationWrapper>
           ))}
         </div>
       </div>

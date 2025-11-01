@@ -3,6 +3,7 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import ScrollAnimationWrapper from '../scroll-animation-wrapper';
 
 const achievements = [
   { value: '6', label: 'Projects as Team Leader' },
@@ -28,16 +29,18 @@ const AchievementsSection = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {achievements.map((achievement, index) => (
-            <Card key={index} className="text-center shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-card/50">
-              <CardHeader>
-                <CardTitle className="text-5xl lg:text-6xl font-extrabold text-accent">
-                  {achievement.value}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-lg font-medium text-foreground">{achievement.label}</p>
-              </CardContent>
-            </Card>
+            <ScrollAnimationWrapper key={index} delay={index * 150}>
+              <Card className="text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 bg-card/50">
+                <CardHeader>
+                  <CardTitle className="text-5xl lg:text-6xl font-extrabold text-accent">
+                    {achievement.value}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg font-medium text-foreground">{achievement.label}</p>
+                </CardContent>
+              </Card>
+            </ScrollAnimationWrapper>
           ))}
         </div>
       </div>

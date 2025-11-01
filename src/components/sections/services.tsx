@@ -4,6 +4,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle2 } from 'lucide-react';
+import ScrollAnimationWrapper from '../scroll-animation-wrapper';
 
 const services = [
   {
@@ -38,19 +39,21 @@ const ServicesSection = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-card/50">
-              <CardHeader>
-                <CardTitle className="text-xl">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-6 w-6 text-accent mr-3 mt-1 shrink-0" />
-                    <p className="text-muted-foreground">{service.description}</p>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            <ScrollAnimationWrapper key={index} delay={index * 150}>
+              <Card className="shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 bg-card/50 h-full">
+                <CardHeader>
+                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-4">
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-6 w-6 text-accent mr-3 mt-1 shrink-0" />
+                      <p className="text-muted-foreground">{service.description}</p>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </ScrollAnimationWrapper>
           ))}
         </div>
       </div>

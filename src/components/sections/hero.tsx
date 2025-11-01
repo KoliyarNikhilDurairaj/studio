@@ -25,7 +25,7 @@ const HeroSection = () => {
             >
               Get free, one-on-one guidance for your IoT projects through live video calls with experienced mentors.
             </p>
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 transition-transform hover:scale-105 shadow-lg">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 transition-transform hover:scale-105 shadow-lg animate-pulse-glow rounded-full">
               <Link href="/contact">
                 Start Your Project
               </Link>

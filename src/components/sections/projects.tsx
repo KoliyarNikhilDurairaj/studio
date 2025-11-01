@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import ScrollAnimationWrapper from '../scroll-animation-wrapper';
 
 const projects = [
   {
@@ -45,35 +46,37 @@ const ProjectsSection = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => {
+          {projects.map((project, index) => {
             const projectImage = PlaceHolderImages.find(p => p.id === project.id);
             return (
-              <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 bg-card/50">
-                {projectImage && (
-                  <div className="aspect-w-3 aspect-h-2">
-                    <Image
-                      src={projectImage.imageUrl}
-                      alt={projectImage.description}
-                      width={600}
-                      height={400}
-                      data-ai-hint={projectImage.imageHint}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                )}
-                <CardHeader>
-                  <CardTitle>{project.title}</CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-grow" />
-                <CardFooter>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary">{tag}</Badge>
-                    ))}
-                  </div>
-                </CardFooter>
-              </Card>
+              <ScrollAnimationWrapper key={project.id} delay={index * 150}>
+                <Card className="flex flex-col overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 bg-card/50 h-full">
+                  {projectImage && (
+                    <div className="aspect-w-3 aspect-h-2">
+                      <Image
+                        src={projectImage.imageUrl}
+                        alt={projectImage.description}
+                        width={600}
+                        height={400}
+                        data-ai-hint={projectImage.imageHint}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                  )}
+                  <CardHeader>
+                    <CardTitle>{project.title}</CardTitle>
+                    <CardDescription>{project.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow" />
+                  <CardFooter>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <Badge key={tag} variant="secondary">{tag}</Badge>
+                      ))}
+                    </div>
+                  </CardFooter>
+                </Card>
+              </ScrollAnimationWrapper>
             );
           })}
         </div>

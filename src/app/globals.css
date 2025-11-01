@@ -17,6 +17,7 @@
     --muted: 220 13% 91%;
     --muted-foreground: 220 9% 46%;
     --accent: 347 77% 66%;
+    --accent-hsl: 347 77% 66%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
@@ -52,6 +53,7 @@
     --muted: 215 28% 17%;
     --muted-foreground: 215 20% 65%;
     --accent: 347 77% 66%;
+    --accent-hsl: 347 77% 66%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
@@ -80,5 +82,22 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  @keyframes pulse-glow {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 hsla(var(--accent-hsl), 0.7);
+    }
+    70% {
+      transform: scale(1.05);
+      box-shadow: 0 0 0 10px hsla(var(--accent-hsl), 0);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s infinite;
   }
 }

@@ -4,6 +4,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { GitBranch, Presentation, MessageCircle, Group } from 'lucide-react';
+import ScrollAnimationWrapper from '../scroll-animation-wrapper';
 
 const technologies = [
   {
@@ -45,15 +46,17 @@ const AiTechnologiesSection = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {technologies.map((tech, index) => (
-            <Card key={index} className="text-center flex flex-col items-center p-6 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-card/50">
-              <CardHeader className="p-0 mb-4">
-                {tech.icon}
-              </CardHeader>
-              <CardContent className="p-0 flex flex-col items-center">
-                <CardTitle className="text-xl font-bold mb-2">{tech.name}</CardTitle>
-                <p className="text-muted-foreground text-sm">{tech.description}</p>
-              </CardContent>
-            </Card>
+            <ScrollAnimationWrapper key={index} delay={index * 150}>
+              <Card className="text-center flex flex-col items-center p-6 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 bg-card/50 h-full">
+                <CardHeader className="p-0 mb-4">
+                  {tech.icon}
+                </CardHeader>
+                <CardContent className="p-0 flex flex-col items-center">
+                  <CardTitle className="text-xl font-bold mb-2">{tech.name}</CardTitle>
+                  <p className="text-muted-foreground text-sm">{tech.description}</p>
+                </CardContent>
+              </Card>
+            </ScrollAnimationWrapper>
           ))}
         </div>
       </div>
