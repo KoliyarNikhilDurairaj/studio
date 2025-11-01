@@ -13,6 +13,19 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/s
 const Header = () => {
   const pathname = usePathname();
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+  
+  const gradients = [
+    'from-pink-500/10 via-fuchsia-500/10 to-purple-600/10',
+    'from-green-400/10 via-cyan-500/10 to-blue-600/10',
+    'from-yellow-400/10 via-orange-500/10 to-red-600/10',
+    'from-indigo-500/10 via-purple-500/10 to-pink-500/10',
+    'from-teal-400/10 via-emerald-500/10 to-lime-600/10',
+    'from-red-500/10 via-rose-500/10 to-pink-500/10',
+    'from-sky-400/10 via-blue-500/10 to-indigo-600/10',
+    'from-amber-400/10 via-yellow-500/10 to-orange-600/10',
+    'from-violet-500/10 via-fuchsia-600/10 to-purple-700/10',
+    'from-cyan-400/10 via-sky-500/10 to-blue-600/10'
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -25,8 +38,9 @@ const Header = () => {
         </Link>
         
         <nav className="hidden md:flex gap-1">
-          {navLinks.map((link) => {
+          {navLinks.map((link, index) => {
             const isActive = pathname === link.href;
+            const gradientClass = gradients[index % gradients.length];
             return (
               <Link
                 key={link.href}
@@ -39,11 +53,14 @@ const Header = () => {
                 <span className="relative z-10">{link.name}</span>
                 {isActive ? (
                   <span
-                    className="absolute inset-0 rounded-md bg-gradient-to-r from-primary/10 via-accent/10 to-pink-500/10"
+                    className={cn("absolute inset-0 rounded-md bg-gradient-to-r", gradientClass)}
                   />
                 ) : (
                   <span
-                    className="absolute inset-0 rounded-md bg-gradient-to-r from-primary/10 via-accent/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className={cn(
+                      "absolute inset-0 rounded-md bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300",
+                      gradientClass
+                    )}
                   />
                 )}
               </Link>
