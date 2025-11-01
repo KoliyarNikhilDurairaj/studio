@@ -12,7 +12,7 @@ const HeroSection = () => {
   
   return (
     <section id="home" className="py-16 md:py-24 lg:py-32">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="order-1 lg:order-1 animate-fade-in-up text-left">
             <h1 
