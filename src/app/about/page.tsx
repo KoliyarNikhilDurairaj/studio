@@ -7,6 +7,7 @@ import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Card, CardContent } from "@/components/ui/card";
 import React from 'react';
+import Link from 'next/link';
 
 export default function AboutPage() {
   const aboutImage = PlaceHolderImages.find(p => p.id === 'about-us');
@@ -16,9 +17,11 @@ export default function AboutPage() {
       <Header />
       <main className="flex-1 container mx-auto px-12 sm:px-16 lg:px-24 py-8 md:py-16">
         <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-cyan-500 to-blue-600 drop-shadow-sm">
-                About
-            </h1>
+            <Link href="/about" className="group inline-block">
+              <h1 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-cyan-500 to-blue-600 drop-shadow-sm transition-transform duration-300 group-hover:scale-105">
+                  About
+              </h1>
+            </Link>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
