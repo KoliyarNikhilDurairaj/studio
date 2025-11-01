@@ -45,9 +45,8 @@ const ScrollToTop = () => {
       const sections = document.querySelectorAll('section[id]');
       let currentSection = 'home';
       const scrollY = window.scrollY;
-      const viewportHeight = window.innerHeight;
       
-      const threshold = viewportHeight / 3;
+      const threshold = window.innerHeight / 3;
 
       sections.forEach(section => {
         const element = section as HTMLElement;
