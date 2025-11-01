@@ -3,6 +3,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -38,9 +39,11 @@ const ProjectsSection = () => {
     >
       <div className="container mx-auto px-12 sm:px-16 lg:px-24">
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent drop-shadow-sm pb-2">
-            Projects
-          </h2>
+          <Link href="/projects" className="group inline-block">
+            <h2 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600 drop-shadow-sm transition-transform duration-300 group-hover:scale-105 pb-2">
+              Projects
+            </h2>
+          </Link>
           <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
             Get inspired by what you can build. We guide you through projects like these, from concept to completion.
           </p>
