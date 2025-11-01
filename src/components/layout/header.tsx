@@ -39,11 +39,11 @@ const Header = () => {
                 <span className="relative z-10">{link.name}</span>
                 {isActive ? (
                   <span
-                    className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-primary via-accent to-pink-500"
+                    className="absolute inset-0 rounded-md bg-gradient-to-r from-primary/10 via-accent/10 to-pink-500/10"
                   />
                 ) : (
                   <span
-                    className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-primary via-accent to-pink-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-center"
+                    className="absolute inset-0 rounded-md bg-gradient-to-r from-primary/10 via-accent/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   />
                 )}
               </Link>
