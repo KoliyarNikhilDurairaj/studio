@@ -133,7 +133,7 @@
   }
 
   .animate-tab-gradient {
-    animation: tab-gradient-cycle 30s linear infinite;
+    animation: tab-gradient-cycle 20s linear infinite;
   }
   
 }
