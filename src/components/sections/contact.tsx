@@ -67,7 +67,7 @@ const ContactSection = () => {
                 <Textarea id="message" placeholder="Tell us about your project or what you want to learn..." rows={5} value={message} onChange={(e) => setMessage(e.target.value)} />
               </div>
               <div className="text-right">
-                <Button type="button" size="lg" className="bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600 text-white hover:opacity-90 transition-opacity" onClick={handleRequestMentorship}>
+                <Button type="button" size="lg" className="bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600 text-white font-bold hover:opacity-90 transition-opacity [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]" onClick={handleRequestMentorship}>
                   Request Mentorship
                 </Button>
               </div>
