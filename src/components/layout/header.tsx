@@ -66,7 +66,7 @@ const Header = () => {
                 )}
               >
                 <span className={cn(
-                  "relative z-10",
+                  "relative z-10 text-outline",
                   !isActive && "group-hover:text-white",
                   isActive ? "text-white font-semibold" : cn("font-semibold", gradientTextClass)
                 )}>
@@ -104,7 +104,7 @@ const Header = () => {
                       href={link.href}
                       onClick={() => setIsSheetOpen(false)}
                       className={cn(
-                        'text-lg font-medium hover:text-foreground',
+                        'text-lg font-medium hover:text-foreground text-outline',
                         isActive ? 'text-primary' : '',
                         !isActive && gradientTextClass
                       )}
