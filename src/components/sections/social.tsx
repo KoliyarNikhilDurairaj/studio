@@ -21,7 +21,7 @@ const SocialSection = () => {
       id="connect" 
       className="py-20 lg:py-32"
     >
-      <div className="container mx-auto px-12 sm:px-16 lg:px-24">
+      <div className="container">
         <div className="text-center">
           <Link href="/connect" className="group inline-block">
             <h2 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-fuchsia-600 to-purple-700 drop-shadow-sm transition-transform duration-300 group-hover:scale-105 mb-4">

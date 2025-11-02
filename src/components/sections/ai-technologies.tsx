@@ -36,7 +36,7 @@ const AiTechnologiesSection = () => {
       id="ai-tech"
       className="py-20 lg:py-32"
     >
-      <div className="container mx-auto px-12 sm:px-16 lg:px-24">
+      <div className="container">
         <div className="text-center mb-12">
           <Link href="/ai-tech" className="group inline-block">
             <h2 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-rose-500 to-pink-500 drop-shadow-sm transition-transform duration-300 group-hover:scale-105">

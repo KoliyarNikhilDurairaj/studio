@@ -42,7 +42,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-12 sm:px-16 lg:px-24 flex h-20 items-center justify-between">
+      <div className="container flex h-20 items-center justify-between">
         <Link href="/" className="group">
           <div className="flex items-center space-x-3 transition-transform duration-300 group-hover:scale-105">
             <div className="animate-tab-gradient p-1.5 rounded-lg">

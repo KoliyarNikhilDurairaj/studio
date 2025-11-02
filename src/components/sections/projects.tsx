@@ -40,7 +40,7 @@ const ProjectsSection = () => {
       id="projects" 
       className="py-20 lg:py-32"
     >
-      <div className="container mx-auto px-12 sm:px-16 lg:px-24">
+      <div className="container">
         <div className="text-center mb-12">
           <Link href="/projects" className="group inline-block">
             <h2 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600 drop-shadow-sm transition-transform duration-300 group-hover:scale-105 pb-2">
@@ -58,7 +58,7 @@ const ProjectsSection = () => {
               <ScrollAnimationWrapper key={project.id} delay={index * 150}>
                 <Card className="flex flex-col overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 bg-card/50 h-full">
                   {projectImage && (
-                    <div className="relative h-52">
+                    <div className="relative h-56">
                        {project.link ? (
                         <Link href={project.link} target="_blank" rel="noopener noreferrer">
                           <Image

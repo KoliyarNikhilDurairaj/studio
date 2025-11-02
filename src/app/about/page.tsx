@@ -15,7 +15,7 @@ export default function AboutPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="flex-1 container mx-auto px-12 sm:px-16 lg:px-24 py-8 md:py-16">
+      <main className="flex-1 container py-8 md:py-16">
         <div className="text-center mb-12">
             <Link href="/about" className="group inline-block">
               <h1 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-cyan-500 to-blue-600 drop-shadow-sm transition-transform duration-300 group-hover:scale-105">
