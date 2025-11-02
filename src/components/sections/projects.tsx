@@ -58,26 +58,24 @@ const ProjectsSection = () => {
               <ScrollAnimationWrapper key={project.id} delay={index * 150}>
                 <Card className="flex flex-col overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 bg-card/50 h-full">
                   {projectImage && (
-                    <div className="aspect-w-3 aspect-h-2">
+                    <div className="relative h-52">
                        {project.link ? (
                         <Link href={project.link} target="_blank" rel="noopener noreferrer">
                           <Image
                             src={projectImage.imageUrl}
                             alt={projectImage.description}
-                            width={600}
-                            height={400}
+                            fill
                             data-ai-hint={projectImage.imageHint}
-                            className="object-cover w-full h-full"
+                            className="object-cover"
                           />
                         </Link>
                       ) : (
                         <Image
                           src={projectImage.imageUrl}
                           alt={projectImage.description}
-                          width={600}
-                          height={400}
+                          fill
                           data-ai-hint={projectImage.imageHint}
-                          className="object-cover w-full h-full"
+                          className="object-cover"
                         />
                       )}
                     </div>
