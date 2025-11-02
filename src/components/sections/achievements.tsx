@@ -7,13 +7,12 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import ScrollAnimationWrapper from '../scroll-animation-wrapper';
 
 const achievements = [
-  { value: '6', label: 'Projects as Team Leader' },
+  { value: '6', label: 'Projects as Team Leader', href: 'https://www.linkedin.com/in/koliyarnikhildurairaj/details/projects/' },
   { value: '100%', label: 'Free of Cost' },
   { value: '8', label: 'Awards Won' },
 ];
 
 const AchievementsSection = () => {
-
   return (
     <section 
       id="achievements" 
@@ -33,16 +32,33 @@ const AchievementsSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {achievements.map((achievement, index) => (
             <ScrollAnimationWrapper key={index} delay={index * 150}>
-              <Card className="text-center shadow-lg hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 bg-card/50">
-                <CardHeader>
-                  <CardTitle className="text-5xl lg:text-6xl font-extrabold text-accent">
-                    {achievement.value}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-lg font-medium text-foreground">{achievement.label}</p>
-                </CardContent>
-              </Card>
+              <div className="h-full">
+                {achievement.href ? (
+                  <Link href={achievement.href} target="_blank" rel="noopener noreferrer" className="h-full block">
+                    <Card className="text-center shadow-lg hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 bg-card/50 h-full">
+                      <CardHeader>
+                        <CardTitle className="text-5xl lg:text-6xl font-extrabold text-accent">
+                          {achievement.value}
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-lg font-medium text-foreground">{achievement.label}</p>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                ) : (
+                  <Card className="text-center shadow-lg hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 bg-card/50 h-full">
+                    <CardHeader>
+                      <CardTitle className="text-5xl lg:text-6xl font-extrabold text-accent">
+                        {achievement.value}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-lg font-medium text-foreground">{achievement.label}</p>
+                    </CardContent>
+                  </Card>
+                )}
+              </div>
             </ScrollAnimationWrapper>
           ))}
         </div>
