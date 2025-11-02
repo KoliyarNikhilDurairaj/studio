@@ -15,6 +15,7 @@ const projects = [
     title: 'IoT Based Biometric Remote Health Monitoring System Using LoRaWAN',
     description: 'Monitor health remotely, track vital signs & alert medical professionals in case of abnormal readings. Provide real-time data for informed healthcare decisions, improve access to healthcare in remote areas using LoRaWAN, Biometric Sensors, GPS, Blynk app, IBM Cloud Platform.',
     tags: ['LoRaWAN', 'Biometric', 'GPS', 'Blynk', 'IBM Cloud'],
+    link: 'https://www.linkedin.com/in/koliyarnikhildurairaj/details/projects/1716141394127/single-media-viewer/?profileId=ACoAABiWCNcBuzrIW-eHLQElFmSsWamuvSmAyTw',
   },
   {
     id: 'project-5',
@@ -67,7 +68,13 @@ const ProjectsSection = () => {
                     </div>
                   )}
                   <CardHeader>
-                    <CardTitle>{project.title}</CardTitle>
+                    {project.link ? (
+                      <Link href={project.link} target="_blank" rel="noopener noreferrer">
+                        <CardTitle className="hover:underline">{project.title}</CardTitle>
+                      </Link>
+                    ) : (
+                      <CardTitle>{project.title}</CardTitle>
+                    )}
                     <CardDescription className="leading-relaxed text-left hyphens-auto">{project.description}</CardDescription>
                   </CardHeader>
                   <CardContent className="flex-grow" />
