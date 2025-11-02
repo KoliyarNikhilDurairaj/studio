@@ -118,5 +118,22 @@
     -webkit-text-stroke: 0.4px rgba(0, 0, 0, 0.9);
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
   }
+
+  @keyframes tab-gradient-cycle {
+    0%, 100% { background-image: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)), #ec4899); }
+    10% { background-image: linear-gradient(to right, #34d399, #22d3ee, #3b82f6); }
+    20% { background-image: linear-gradient(to right, #facc15, #f97316, #ef4444); }
+    30% { background-image: linear-gradient(to right, #6366f1, #a855f7, #ec4899); }
+    40% { background-image: linear-gradient(to right, #2dd4bf, #10b981, #84cc16); }
+    50% { background-image: linear-gradient(to right, #ef4444, #f43f5e, #ec4899); }
+    60% { background-image: linear-gradient(to right, #38bdf8, #3b82f6, #6366f1); }
+    70% { background-image: linear-gradient(to right, #fbbf24, #f59e0b, #f97316); }
+    80% { background-image: linear-gradient(to right, #8b5cf6, #d946ef, #a855f7); }
+    90% { background-image: linear-gradient(to right, #22d3ee, #38bdf8, #3b82f6); }
+  }
+
+  .animate-tab-gradient {
+    animation: tab-gradient-cycle 30s linear infinite;
+  }
   
 }
