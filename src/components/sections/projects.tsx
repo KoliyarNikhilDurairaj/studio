@@ -29,6 +29,7 @@ const projects = [
     title: 'Bluetooth Controlled Smart Electric Vehicle',
     description: 'Controlling a Smart Electrical Vehicle through Bluetooth Connection with a Smartphone. The Smart Electric Vehicle is Battery Powered.',
     tags: ['Bluetooth', 'Electric Vehicle', 'App Controlled'],
+    link: 'https://www.linkedin.com/in/koliyarnikhildurairaj/details/projects/358370784/multiple-media-viewer/?profileId=ACoAABiWCNcBuzrIW-eHLQElFmSsWamuvSmAyTw&treasuryMediaId=1716313667659',
   },
 ];
 
