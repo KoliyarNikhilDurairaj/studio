@@ -45,12 +45,12 @@ const Header = () => {
       <div className="container mx-auto px-12 sm:px-16 lg:px-24 flex h-20 items-center justify-between">
         <Link href="/" className="group">
           <div className="flex items-center space-x-3 transition-transform duration-300 group-hover:scale-105">
-            <div className="flex items-center space-x-3 animate-tab-gradient p-1.5 rounded-lg">
-              <div className="bg-background/80 rounded-md p-1 flex items-center justify-center">
+            <div className="animate-tab-gradient p-1.5 rounded-lg">
+              <div className="bg-background/80 rounded-md p-1">
                 <ShieldCheck className="h-7 w-7 text-accent" />
               </div>
-              <span className="text-2xl font-bold text-transparent bg-clip-text">Proteciot</span>
             </div>
+            <span className="text-2xl font-bold text-transparent bg-clip-text animate-tab-gradient">Proteciot</span>
           </div>
         </Link>
         
