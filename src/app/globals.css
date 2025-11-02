@@ -120,20 +120,30 @@
   }
 
   @keyframes tab-gradient-cycle {
-    0%, 100% { background-image: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)), #ec4899); }
-    10% { background-image: linear-gradient(to right, #34d399, #22d3ee, #3b82f6); }
-    20% { background-image: linear-gradient(to right, #facc15, #f97316, #ef4444); }
-    30% { background-image: linear-gradient(to right, #6366f1, #a855f7, #ec4899); }
-    40% { background-image: linear-gradient(to right, #2dd4bf, #10b981, #84cc16); }
-    50% { background-image: linear-gradient(to right, #ef4444, #f43f5e, #ec4899); }
-    60% { background-image: linear-gradient(to right, #38bdf8, #3b82f6, #6366f1); }
-    70% { background-image: linear-gradient(to right, #fbbf24, #f59e0b, #f97316); }
-    80% { background-image: linear-gradient(to right, #8b5cf6, #d946ef, #a855f7); }
-    90% { background-image: linear-gradient(to right, #22d3ee, #38bdf8, #3b82f6); }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 
   .animate-tab-gradient {
-    animation: tab-gradient-cycle 20s linear infinite;
+    background-image: linear-gradient(to right, 
+      hsl(var(--primary)), 
+      hsl(var(--accent)), 
+      #ec4899, 
+      #34d399, #22d3ee, #3b82f6,
+      #facc15, #f97316, #ef4444,
+      #6366f1, #a855f7, #ec4899,
+      #2dd4bf, #10b981, #84cc16,
+      #ef4444, #f43f5e, #ec4899,
+      #38bdf8, #3b82f6, #6366f1,
+      #fbbf24, #f59e0b, #f97316,
+      #8b5cf6, #d946ef, #a855f7,
+      #22d3ee, #38bdf8, #3b82f6,
+      hsl(var(--primary)), 
+      hsl(var(--accent))
+    );
+    background-size: 400% 400%;
+    animation: tab-gradient-cycle 20s ease-in-out infinite;
   }
   
 }
