@@ -8,7 +8,7 @@ import ScrollAnimationWrapper from '../scroll-animation-wrapper';
 
 const achievements = [
   { value: '6', label: 'Projects as Team Leader', href: 'https://www.linkedin.com/in/koliyarnikhildurairaj/details/projects/' },
-  { value: '100%', label: 'Free of Cost' },
+  { value: '100%', label: 'Free of Cost', href: '/goals' },
   { value: '8', label: 'Awards Won' },
 ];
 
@@ -34,7 +34,7 @@ const AchievementsSection = () => {
             <ScrollAnimationWrapper key={index} delay={index * 150}>
               <div className="h-full">
                 {achievement.href ? (
-                  <Link href={achievement.href} target="_blank" rel="noopener noreferrer" className="h-full block">
+                  <Link href={achievement.href} target={achievement.href.startsWith('http') ? '_blank' : '_self'} rel="noopener noreferrer" className="h-full block">
                     <Card className="text-center shadow-lg hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 bg-card/50 h-full">
                       <CardHeader>
                         <CardTitle className="text-5xl lg:text-6xl font-extrabold text-accent">
