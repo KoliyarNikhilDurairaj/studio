@@ -119,20 +119,4 @@
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
   }
   
-  @keyframes flow-gradient {
-    0%, 10%   { background-image: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)), #ec4899); }
-    10.01%, 20%  { background-image: linear-gradient(to right, #4ade80, #22d3ee, #2563eb); }
-    20.01%, 30%  { background-image: linear-gradient(to right, #facc15, #f97316, #dc2626); }
-    30.01%, 40%  { background-image: linear-gradient(to right, #6366f1, #a855f7, #ec4899); }
-    40.01%, 50%  { background-image: linear-gradient(to right, #2dd4bf, #10b981, #84cc16); }
-    50.01%, 60%  { background-image: linear-gradient(to right, #ef4444, #f43f5e, #ec4899); }
-    60.01%, 70%  { background-image: linear-gradient(to right, #38bdf8, #3b82f6, #4f46e5); }
-    70.01%, 80%  { background-image: linear-gradient(to right, #fbbf24, #f59e0b, #f97316); }
-    80.01%, 90%  { background-image: linear-gradient(to right, #8b5cf6, #d946ef, #a855f7); }
-    90.01%, 100% { background-image: linear-gradient(to right, #22d3ee, #38bdf8, #3b82f6); }
-  }
-
-  .animate-flow-gradient {
-    animation: flow-gradient 20s linear infinite;
-  }
 }
