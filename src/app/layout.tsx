@@ -7,8 +7,44 @@ import { ThemeToggle } from '@/components/theme-toggle';
 import ScrollToTop from '@/components/scroll-to-top';
 
 export const metadata: Metadata = {
-  title: 'Proteciot - Free IoT Project Mentorship',
-  description: 'An educational initiative providing free IoT project mentorship to engineering students to build real-world systems.',
+  metadataBase: new URL('https://proteciot.web.app'),
+  title: 'Proteciot - Free IoT Project Mentorship for Engineering Students',
+  description: 'Proteciot offers free, expert-led IoT project mentorship for engineering students. Get guidance on embedded programming, circuit design, and build real-world systems. Start your project today!',
+  keywords: [
+    'IoT mentorship',
+    'free IoT projects',
+    'engineering students',
+    'embedded systems',
+    'Arduino projects',
+    'Raspberry Pi',
+    'LoRaWAN',
+    'Koliyar Nikhil Durairaj',
+    'Proteciot',
+    'IoT training'
+  ],
+  authors: [{ name: 'Koliyar Nikhil Durairaj', url: 'https://www.linkedin.com/in/koliyarnikhildurairaj/' }],
+  openGraph: {
+    title: 'Proteciot - Free IoT Project Mentorship for Innovators',
+    description: 'Empowering the next generation of engineers with free, hands-on mentorship for building real-world IoT solutions.',
+    url: 'https://proteciot.web.app',
+    siteName: 'Proteciot',
+    images: [
+      {
+        url: 'https://live.staticflickr.com/65535/54891928270_2d40222a5a_b.jpg',
+        width: 1024,
+        height: 683,
+        alt: 'Mentorship for IoT Innovators',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Proteciot - Free IoT Project Mentorship',
+    description: 'Get free, expert guidance for your IoT projects. From idea to implementation, Proteciot helps engineering students succeed.',
+    images: ['https://live.staticflickr.com/65535/54891928270_2d40222a5a_b.jpg'],
+  },
 };
 
 export default function RootLayout({
