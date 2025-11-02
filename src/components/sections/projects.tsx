@@ -57,14 +57,27 @@ const ProjectsSection = () => {
                 <Card className="flex flex-col overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 bg-card/50 h-full">
                   {projectImage && (
                     <div className="aspect-w-3 aspect-h-2">
-                      <Image
-                        src={projectImage.imageUrl}
-                        alt={projectImage.description}
-                        width={600}
-                        height={400}
-                        data-ai-hint={projectImage.imageHint}
-                        className="object-cover w-full h-full"
-                      />
+                       {project.link ? (
+                        <Link href={project.link} target="_blank" rel="noopener noreferrer">
+                          <Image
+                            src={projectImage.imageUrl}
+                            alt={projectImage.description}
+                            width={600}
+                            height={400}
+                            data-ai-hint={projectImage.imageHint}
+                            className="object-cover w-full h-full"
+                          />
+                        </Link>
+                      ) : (
+                        <Image
+                          src={projectImage.imageUrl}
+                          alt={projectImage.description}
+                          width={600}
+                          height={400}
+                          data-ai-hint={projectImage.imageHint}
+                          className="object-cover w-full h-full"
+                        />
+                      )}
                     </div>
                   )}
                   <CardHeader>
