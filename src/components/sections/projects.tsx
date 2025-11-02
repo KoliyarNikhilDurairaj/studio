@@ -22,6 +22,7 @@ const projects = [
     title: 'Advanced Robotic Automated Vehicle',
     description: 'This is the Advanced Robotic Automated Vehicle The Vehicle is Driven by 4 DC Motors Fixed to the Chassis of the Vehicle and Above the Chassis the Advanced Sensors are Integrated on a Electric Powered Vehicle and displaying the readings of the sensors in various units.',
     tags: ['Robotics', 'Automation', 'Sensors'],
+    link: 'https://www.linkedin.com/in/koliyarnikhildurairaj/details/projects/304103570/multiple-media-viewer/?profileId=ACoAABiWCNcBuzrIW-eHLQElFmSsWamuvSmAyTw&treasuryMediaId=1716312033053',
   },
   {
     id: 'project-6',
