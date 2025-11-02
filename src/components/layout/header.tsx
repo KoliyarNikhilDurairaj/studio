@@ -43,11 +43,13 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-12 sm:px-16 lg:px-24 flex h-20 items-center justify-between">
-        <Link href="/" className="flex items-center space-x-3 group">
-          <div className="p-1.5 rounded-lg animate-tab-gradient transition-transform duration-300 group-hover:scale-110">
-             <ShieldCheck className="h-7 w-7 text-white" />
+        <Link href="/" className="group">
+          <div className="flex items-center space-x-3 transition-transform duration-300 group-hover:scale-105">
+            <div className="p-1.5 rounded-lg animate-tab-gradient">
+              <ShieldCheck className="h-7 w-7 text-white" />
+            </div>
+            <span className="text-2xl font-bold text-transparent bg-clip-text animate-tab-gradient">Proteciot</span>
           </div>
-          <span className="text-2xl font-bold text-transparent bg-clip-text animate-tab-gradient transition-transform duration-300 group-hover:scale-105">Proteciot</span>
         </Link>
         
         <nav className="hidden md:flex gap-1">
