@@ -9,7 +9,7 @@ import ScrollAnimationWrapper from '../scroll-animation-wrapper';
 const achievements = [
   { value: '6', label: 'Projects as Team Leader', href: 'https://www.linkedin.com/in/koliyarnikhildurairaj/details/projects/' },
   { value: '100%', label: 'Free of Cost', href: '/goals' },
-  { value: '8', label: 'Awards Won' },
+  { value: '8', label: 'Awards Won', href: 'https://www.linkedin.com/in/koliyarnikhildurairaj/details/honors/' },
 ];
 
 const AchievementsSection = () => {
