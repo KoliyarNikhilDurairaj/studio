@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -28,12 +29,29 @@ const messageGradients = [
     'bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600'
   ];
 
+const sectionGradients: Record<string, string> = {
+  home: 'from-primary via-accent to-pink-500',
+  about: 'from-green-400 via-cyan-500 to-blue-600',
+  projects: 'from-yellow-400 via-orange-500 to-red-600',
+  achievements: 'from-indigo-500 via-purple-500 to-pink-500',
+  specializations: 'from-teal-400 via-emerald-500 to-lime-600',
+  'ai-tech': 'from-red-500 via-rose-500 to-pink-500',
+  goals: 'from-sky-400 via-blue-500 to-indigo-600',
+  services: 'from-amber-400 via-yellow-500 to-orange-600',
+  connect: 'from-violet-500 via-fuchsia-600 to-purple-700',
+  contact: 'from-cyan-400 via-sky-500 to-blue-600',
+};
+
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
+  const [activeSection, setActiveSection] = useState('home');
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  const pathname = usePathname();
+
 
   const scrollToBottom = () => {
     if (scrollAreaRef.current) {
@@ -53,6 +71,34 @@ export default function Chatbot() {
         setTimeout(() => scrollToBottom(), 100);
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    if (pathname === '/') {
+      const options = { root: null, rootMargin: '0px', threshold: 0.5 };
+      const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      };
+
+      observerRef.current = new IntersectionObserver(handleIntersect, options);
+      const sections = document.querySelectorAll('section[id]');
+      sections.forEach(section => observerRef.current?.observe(section));
+
+      return () => {
+        sections.forEach(section => observerRef.current?.unobserve(section));
+      };
+    } else {
+      const pageKey = pathname.substring(1);
+      if (sectionGradients[pageKey]) {
+        setActiveSection(pageKey);
+      } else {
+        setActiveSection('home');
+      }
+    }
+  }, [pathname]);
 
   const handleSend = async () => {
     if (input.trim() === '') return;
@@ -93,6 +139,8 @@ export default function Chatbot() {
     }
   };
 
+  const titleGradient = sectionGradients[activeSection] || sectionGradients.home;
+
   return (
     <div className="relative">
       {isOpen && (
@@ -103,7 +151,9 @@ export default function Chatbot() {
                     <Avatar className="h-8 w-8 bg-primary">
                       <AvatarFallback><Bot className="text-primary-foreground"/></AvatarFallback>
                     </Avatar>
-                    <CardTitle className="text-lg">Proteciot Assistant</CardTitle>
+                    <CardTitle className={cn("text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r", titleGradient)}>
+                      Proteciot Assistant
+                    </CardTitle>
                 </div>
                 <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="h-8 w-8">
                   <X className="h-4 w-4" />
