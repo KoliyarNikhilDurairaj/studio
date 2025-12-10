@@ -163,10 +163,10 @@ export default function Chatbot() {
                     <div className="space-y-4 pr-4">
                     {messages.length === 0 && (
                         <div className="flex items-start gap-3 justify-start">
-                            <Avatar className="h-8 w-8">
-                                <AvatarFallback><Bot /></AvatarFallback>
+                             <Avatar className="h-8 w-8 bg-gradient-to-r from-primary via-accent to-pink-500">
+                                <AvatarFallback className="bg-transparent"><Bot className="text-primary-foreground"/></AvatarFallback>
                             </Avatar>
-                            <div className="rounded-lg p-3 text-sm bg-muted">
+                            <div className="rounded-lg p-3 text-sm bg-gradient-to-r from-primary via-accent to-pink-500 text-primary-foreground">
                                 <p className="whitespace-pre-wrap">Hello! I'm the Proteciot Assistant. Ready to dive into the world of IoT? I'm here to help!</p>
                             </div>
                         </div>
@@ -182,8 +182,8 @@ export default function Chatbot() {
                         )}
                       >
                         {message.role === 'model' && (
-                          <Avatar className="h-8 w-8">
-                            <AvatarFallback><Bot /></AvatarFallback>
+                          <Avatar className="h-8 w-8 bg-gradient-to-r from-primary via-accent to-pink-500">
+                            <AvatarFallback className="bg-transparent"><Bot className="text-primary-foreground"/></AvatarFallback>
                           </Avatar>
                         )}
                         <div
@@ -197,16 +197,16 @@ export default function Chatbot() {
                           <p className="whitespace-pre-wrap">{message.content}</p>
                         </div>
                         {message.role === 'user' && (
-                            <Avatar className="h-8 w-8">
-                                <AvatarFallback><User /></AvatarFallback>
+                            <Avatar className={cn("h-8 w-8", userMessageGradient)}>
+                                <AvatarFallback className="bg-transparent"><User className="text-primary-foreground"/></AvatarFallback>
                             </Avatar>
                         )}
                       </div>
                     )})}
                     {isLoading && (
                         <div className="flex items-start gap-3 justify-start">
-                            <Avatar className="h-8 w-8">
-                                <AvatarFallback><Bot /></AvatarFallback>
+                            <Avatar className="h-8 w-8 bg-gradient-to-r from-primary via-accent to-pink-500">
+                                <AvatarFallback className="bg-transparent"><Bot className="text-primary-foreground"/></AvatarFallback>
                             </Avatar>
                             <div className="rounded-lg p-3 text-sm bg-muted flex items-center gap-1">
                                <span className="h-2 w-2 rounded-full bg-foreground/30 animate-pulse delay-0"></span>
