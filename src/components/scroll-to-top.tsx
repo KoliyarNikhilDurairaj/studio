@@ -84,22 +84,20 @@ const ScrollToTop = () => {
   const buttonGradient = sectionGradients[activeSection] || sectionGradients.home;
 
   return (
-    <div className="fixed bottom-16 right-4 z-50">
-      <Button
-        variant="outline"
-        size="icon"
-        onClick={scrollToTop}
-        className={cn(
-          "text-white rounded-full transition-all duration-300 animate-nudge-up border-0",
-          "hover:scale-110 hover:opacity-90",
-          buttonGradient,
-          isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-        )}
-        aria-label="Scroll to top"
-      >
-        <ChevronUp className="h-6 w-6" />
-      </Button>
-    </div>
+    <Button
+      variant="outline"
+      size="icon"
+      onClick={scrollToTop}
+      className={cn(
+        "text-white rounded-full transition-all duration-300 animate-nudge-up border-0",
+        "hover:scale-110 hover:opacity-90",
+        buttonGradient,
+        isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+      )}
+      aria-label="Scroll to top"
+    >
+      <ChevronUp className="h-6 w-6" />
+    </Button>
   );
 };
 

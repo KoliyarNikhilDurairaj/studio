@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
 import { ThemeToggle } from '@/components/theme-toggle';
 import ScrollToTop from '@/components/scroll-to-top';
+import Chatbot from '@/components/chatbot';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://proteciot.web.app'),
@@ -69,10 +70,11 @@ export default function RootLayout({
         >
           {children}
           <Toaster />
-          <div className="fixed bottom-4 right-4 z-50">
+          <div className="fixed bottom-4 right-4 z-50 flex flex-col gap-4">
+            <Chatbot />
+            <ScrollToTop />
             <ThemeToggle />
           </div>
-          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>
