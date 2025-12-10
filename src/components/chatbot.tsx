@@ -29,6 +29,18 @@ const sectionGradients: Record<string, string> = {
   contact: 'from-cyan-400 via-sky-500 to-blue-600',
 };
 
+const messageGradients = [
+  'bg-gradient-to-r from-green-400 via-cyan-500 to-blue-600',
+  'bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600',
+  'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500',
+  'bg-gradient-to-r from-teal-400 via-emerald-500 to-lime-600',
+  'bg-gradient-to-r from-red-500 via-rose-500 to-pink-500',
+  'bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600',
+  'bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-600',
+  'bg-gradient-to-r from-violet-500 via-fuchsia-600 to-purple-700',
+  'bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600',
+];
+
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -160,6 +172,7 @@ export default function Chatbot() {
                         </div>
                     )}
                     {messages.map((message, index) => {
+                      const userMessageGradient = messageGradients[index % messageGradients.length];
                       return (
                       <div
                         key={index}
@@ -175,10 +188,10 @@ export default function Chatbot() {
                         )}
                         <div
                           className={cn(
-                            'rounded-lg p-3 text-sm max-w-[80%]',
+                            'rounded-lg p-3 text-sm max-w-[80%] text-primary-foreground',
                             message.role === 'user'
-                              ? 'bg-gradient-to-r from-primary via-accent to-pink-500 text-primary-foreground'
-                              : 'bg-gradient-to-r from-primary via-accent to-pink-500 text-primary-foreground'
+                              ? userMessageGradient
+                              : 'bg-gradient-to-r from-primary via-accent to-pink-500'
                           )}
                         >
                           <p className="whitespace-pre-wrap">{message.content}</p>
