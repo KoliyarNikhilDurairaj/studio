@@ -15,6 +15,19 @@ type Message = {
   content: string;
 };
 
+const messageGradients = [
+    'bg-gradient-to-r from-primary via-accent to-pink-500',
+    'bg-gradient-to-r from-green-400 via-cyan-500 to-blue-600',
+    'bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600',
+    'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500',
+    'bg-gradient-to-r from-teal-400 via-emerald-500 to-lime-600',
+    'bg-gradient-to-r from-red-500 via-rose-500 to-pink-500',
+    'bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600',
+    'bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-600',
+    'bg-gradient-to-r from-violet-500 via-fuchsia-600 to-purple-700',
+    'bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600'
+  ];
+
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -109,7 +122,9 @@ export default function Chatbot() {
                             </div>
                         </div>
                     )}
-                    {messages.map((message, index) => (
+                    {messages.map((message, index) => {
+                      const userMessageCount = messages.slice(0, index + 1).filter(m => m.role === 'user').length;
+                      return (
                       <div
                         key={index}
                         className={cn(
@@ -126,7 +141,7 @@ export default function Chatbot() {
                           className={cn(
                             'rounded-lg p-3 text-sm max-w-[80%]',
                             message.role === 'user'
-                              ? 'bg-primary text-primary-foreground'
+                              ? cn(messageGradients[userMessageCount % messageGradients.length], 'text-primary-foreground')
                               : 'bg-muted'
                           )}
                         >
@@ -138,7 +153,7 @@ export default function Chatbot() {
                             </Avatar>
                         )}
                       </div>
-                    ))}
+                    )})}
                     {isLoading && (
                         <div className="flex items-start gap-3 justify-start">
                             <Avatar className="h-8 w-8">
