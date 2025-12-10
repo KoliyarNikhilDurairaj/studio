@@ -16,19 +16,6 @@ type Message = {
   content: string;
 };
 
-const messageGradients = [
-    'bg-gradient-to-r from-primary via-accent to-pink-500',
-    'bg-gradient-to-r from-green-400 via-cyan-500 to-blue-600',
-    'bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600',
-    'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500',
-    'bg-gradient-to-r from-teal-400 via-emerald-500 to-lime-600',
-    'bg-gradient-to-r from-red-500 via-rose-500 to-pink-500',
-    'bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600',
-    'bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-600',
-    'bg-gradient-to-r from-violet-500 via-fuchsia-600 to-purple-700',
-    'bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600'
-  ];
-
 const sectionGradients: Record<string, string> = {
   home: 'from-primary via-accent to-pink-500',
   about: 'from-green-400 via-cyan-500 to-blue-600',
@@ -149,7 +136,7 @@ export default function Chatbot() {
               <CardHeader className="flex flex-row items-center justify-between">
                 <div className="flex items-center gap-2">
                     <Avatar className={cn("h-8 w-8 bg-gradient-to-r", titleGradient)}>
-                      <AvatarFallback><Bot className="text-primary-foreground"/></AvatarFallback>
+                      <AvatarFallback className="bg-transparent"><Bot className="text-primary-foreground"/></AvatarFallback>
                     </Avatar>
                     <CardTitle className={cn("text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r", titleGradient)}>
                       Proteciot Assistant
@@ -173,7 +160,6 @@ export default function Chatbot() {
                         </div>
                     )}
                     {messages.map((message, index) => {
-                      const userMessageCount = messages.slice(0, index + 1).filter(m => m.role === 'user').length;
                       return (
                       <div
                         key={index}
@@ -191,7 +177,7 @@ export default function Chatbot() {
                           className={cn(
                             'rounded-lg p-3 text-sm max-w-[80%]',
                             message.role === 'user'
-                              ? cn(messageGradients[userMessageCount % messageGradients.length], 'text-primary-foreground')
+                              ? 'bg-gradient-to-r from-primary via-accent to-pink-500 text-primary-foreground'
                               : 'bg-muted'
                           )}
                         >
