@@ -100,7 +100,7 @@ export default function Chatbot() {
   }, [pathname]);
 
   const handleSend = async () => {
-    if (input.trim() === '') return;
+    if (input.trim() === '' || isLoading) return;
 
     const userMessage: Message = { role: 'user', content: input };
     setMessages((prev) => [...prev, userMessage]);
@@ -139,6 +139,11 @@ export default function Chatbot() {
   };
 
   const titleGradient = sectionGradients[activeSection] || sectionGradients.home;
+
+  const lastUserMessageIndex = messages.map(m => m.role).lastIndexOf('user');
+  const sendButtonGradient = lastUserMessageIndex > -1
+    ? messageGradients[lastUserMessageIndex % messageGradients.length]
+    : 'bg-primary';
 
   return (
     <div className="relative">
@@ -229,7 +234,17 @@ export default function Chatbot() {
                     disabled={isLoading}
                     aria-label="Chat input"
                   />
-                  <Button onClick={handleSend} disabled={isLoading} size="icon" aria-label="Send message">
+                  <Button 
+                    onClick={handleSend} 
+                    disabled={isLoading} 
+                    size="icon" 
+                    aria-label="Send message"
+                    className={cn(
+                        'text-white transition-all', 
+                        sendButtonGradient,
+                        isLoading ? 'opacity-50' : 'hover:opacity-90'
+                    )}
+                   >
                     <Send className="h-5 w-5" />
                   </Button>
                 </div>
