@@ -148,7 +148,7 @@ export default function Chatbot() {
             <Card className="w-[340px] h-[450px] flex flex-col shadow-2xl rounded-2xl">
               <CardHeader className="flex flex-row items-center justify-between">
                 <div className="flex items-center gap-2">
-                    <Avatar className="h-8 w-8 bg-primary">
+                    <Avatar className={cn("h-8 w-8 bg-gradient-to-r", titleGradient)}>
                       <AvatarFallback><Bot className="text-primary-foreground"/></AvatarFallback>
                     </Avatar>
                     <CardTitle className={cn("text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r", titleGradient)}>
