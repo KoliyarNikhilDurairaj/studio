@@ -178,7 +178,7 @@ export default function Chatbot() {
                             'rounded-lg p-3 text-sm max-w-[80%]',
                             message.role === 'user'
                               ? 'bg-gradient-to-r from-primary via-accent to-pink-500 text-primary-foreground'
-                              : 'bg-muted'
+                              : 'bg-gradient-to-r from-primary via-accent to-pink-500 text-primary-foreground'
                           )}
                         >
                           <p className="whitespace-pre-wrap">{message.content}</p>
