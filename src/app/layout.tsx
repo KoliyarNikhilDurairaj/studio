@@ -70,7 +70,7 @@ export default function RootLayout({
         >
           {children}
           <Toaster />
-          <div className="fixed bottom-4 right-4 z-50 flex flex-col gap-4">
+          <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-4">
             <Chatbot />
             <ScrollToTop />
             <ThemeToggle />
