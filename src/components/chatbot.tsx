@@ -8,7 +8,6 @@ import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Bot, Send, User, X } from 'lucide-react';
 import { chat, type ChatInput } from '@/ai/flows/chat-flow';
 import { cn } from '@/lib/utils';
-import { Skeleton } from './ui/skeleton';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card';
 
 type Message = {
@@ -84,7 +83,7 @@ export default function Chatbot() {
   return (
     <div className="relative">
       {isOpen && (
-         <div className="absolute bottom-full mb-2 right-0">
+         <div className="absolute bottom-0 right-full mr-4">
             <Card className="w-[340px] h-[450px] flex flex-col shadow-2xl rounded-2xl">
               <CardHeader className="flex flex-row items-center justify-between">
                 <div className="flex items-center gap-2">
@@ -106,7 +105,7 @@ export default function Chatbot() {
                                 <AvatarFallback><Bot /></AvatarFallback>
                             </Avatar>
                             <div className="rounded-lg p-3 text-sm bg-muted">
-                                <p className="whitespace-pre-wrap">Hello! How can I help you today?</p>
+                                <p className="whitespace-pre-wrap">Hello! I'm the Proteciot Assistant. Ready to dive into the world of IoT? I'm here to help!</p>
                             </div>
                         </div>
                     )}
