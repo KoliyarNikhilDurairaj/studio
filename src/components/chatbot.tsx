@@ -153,7 +153,7 @@ export default function Chatbot() {
               <CardHeader className="flex flex-row items-center justify-between">
                 <div className="flex items-center gap-2">
                     <Avatar className={cn("h-8 w-8 bg-gradient-to-r", titleGradient)}>
-                      <AvatarFallback className="bg-transparent"><Bot className="text-primary-foreground"/></AvatarFallback>
+                      <AvatarFallback className="bg-transparent"><MessageCircle className="text-primary-foreground"/></AvatarFallback>
                     </Avatar>
                     <CardTitle className={cn("text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r", titleGradient)}>
                       Proteciot Assistant
@@ -169,7 +169,7 @@ export default function Chatbot() {
                     {messages.length === 0 && (
                         <div className="flex items-start gap-3 justify-start">
                              <Avatar className="h-8 w-8 bg-gradient-to-r from-primary via-accent to-pink-500">
-                                <AvatarFallback className="bg-transparent"><Bot className="text-primary-foreground"/></AvatarFallback>
+                                <AvatarFallback className="bg-transparent"><MessageCircle className="text-primary-foreground"/></AvatarFallback>
                             </Avatar>
                             <div className="rounded-lg p-3 text-sm bg-gradient-to-r from-primary via-accent to-pink-500 text-primary-foreground">
                                 <p className="whitespace-pre-wrap">Hello! I'm the Proteciot Assistant. Ready to dive into the world of IoT? I'm here to help!</p>
@@ -188,7 +188,7 @@ export default function Chatbot() {
                       >
                         {message.role === 'model' && (
                           <Avatar className="h-8 w-8 bg-gradient-to-r from-primary via-accent to-pink-500">
-                            <AvatarFallback className="bg-transparent"><Bot className="text-primary-foreground"/></AvatarFallback>
+                            <AvatarFallback className="bg-transparent"><MessageCircle className="text-primary-foreground"/></AvatarFallback>
                           </Avatar>
                         )}
                         <div
@@ -211,7 +211,7 @@ export default function Chatbot() {
                     {isLoading && (
                         <div className="flex items-start gap-3 justify-start">
                             <Avatar className="h-8 w-8 bg-gradient-to-r from-primary via-accent to-pink-500">
-                                <AvatarFallback className="bg-transparent"><Bot className="text-primary-foreground"/></AvatarFallback>
+                                <AvatarFallback className="bg-transparent"><MessageCircle className="text-primary-foreground"/></AvatarFallback>
                             </Avatar>
                             <div className="rounded-lg p-3 text-sm bg-muted flex items-center gap-1">
                                <span className="h-2 w-2 rounded-full bg-foreground/30 animate-pulse delay-0"></span>
@@ -263,7 +263,7 @@ export default function Chatbot() {
         )}
         aria-label={isOpen ? "Close Chatbot" : "Open Chatbot"}
       >
-        {isOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
+        <MessageCircle className="h-6 w-6" />
       </Button>
     </div>
   );
