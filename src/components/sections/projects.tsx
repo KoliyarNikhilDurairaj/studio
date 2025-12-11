@@ -3,9 +3,11 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import ScrollAnimationWrapper from '../scroll-animation-wrapper';
 
 const projects = [
   {
@@ -13,18 +15,21 @@ const projects = [
     title: 'IoT Based Biometric Remote Health Monitoring System Using LoRaWAN',
     description: 'Monitor health remotely, track vital signs & alert medical professionals in case of abnormal readings. Provide real-time data for informed healthcare decisions, improve access to healthcare in remote areas using LoRaWAN, Biometric Sensors, GPS, Blynk app, IBM Cloud Platform.',
     tags: ['LoRaWAN', 'Biometric', 'GPS', 'Blynk', 'IBM Cloud'],
+    link: 'https://www.linkedin.com/in/koliyarnikhildurairaj/details/projects/1716141394127/single-media-viewer/?profileId=ACoAABiWCNcBuzrIW-eHLQElFmSsWamuvSmAyTw',
   },
   {
     id: 'project-5',
     title: 'Advanced Robotic Automated Vehicle',
     description: 'This is the Advanced Robotic Automated Vehicle The Vehicle is Driven by 4 DC Motors Fixed to the Chassis of the Vehicle and Above the Chassis the Advanced Sensors are Integrated on a Electric Powered Vehicle and displaying the readings of the sensors in various units.',
     tags: ['Robotics', 'Automation', 'Sensors'],
+    link: 'https://www.linkedin.com/in/koliyarnikhildurairaj/details/projects/304103570/multiple-media-viewer/?profileId=ACoAABiWCNcBuzrIW-eHLQElFmSsWamuvSmAyTw&treasuryMediaId=1716312033053',
   },
   {
     id: 'project-6',
     title: 'Bluetooth Controlled Smart Electric Vehicle',
     description: 'Controlling a Smart Electrical Vehicle through Bluetooth Connection with a Smartphone. The Smart Electric Vehicle is Battery Powered.',
     tags: ['Bluetooth', 'Electric Vehicle', 'App Controlled'],
+    link: 'https://www.linkedin.com/in/koliyarnikhildurairaj/details/projects/358370784/multiple-media-viewer/?profileId=ACoAABiWCNcBuzrIW-eHLQElFmSsWamuvSmAyTw&treasuryMediaId=1716313667659',
   },
 ];
 
@@ -35,45 +40,66 @@ const ProjectsSection = () => {
       id="projects" 
       className="py-20 lg:py-32"
     >
-      <div className="container mx-auto px-4">
+      <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold font-headline text-primary">
-            Projects
-          </h2>
-          <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
+          <Link href="/projects" className="group inline-block">
+            <h2 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600 drop-shadow-sm transition-transform duration-300 group-hover:scale-105 pb-2">
+              Projects
+            </h2>
+          </Link>
+          <p className="text-lg text-muted-foreground mt-4 max-w-xl mx-auto leading-relaxed">
             Get inspired by what you can build. We guide you through projects like these, from concept to completion.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => {
+          {projects.map((project, index) => {
             const projectImage = PlaceHolderImages.find(p => p.id === project.id);
             return (
-              <Card key={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 bg-card/50">
-                {projectImage && (
-                  <div className="aspect-w-3 aspect-h-2">
-                    <Image
-                      src={projectImage.imageUrl}
-                      alt={projectImage.description}
-                      width={600}
-                      height={400}
-                      data-ai-hint={projectImage.imageHint}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                )}
-                <CardHeader>
-                  <CardTitle>{project.title}</CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-grow" />
-                <CardFooter>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary">{tag}</Badge>
-                    ))}
-                  </div>
-                </CardFooter>
-              </Card>
+              <ScrollAnimationWrapper key={project.id} delay={index * 150}>
+                <Card className="flex flex-col overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 bg-card/50 h-full">
+                  {projectImage && (
+                    <div className="relative h-56">
+                       {project.link ? (
+                        <Link href={project.link} target="_blank" rel="noopener noreferrer">
+                          <Image
+                            src={projectImage.imageUrl}
+                            alt={projectImage.description}
+                            fill
+                            data-ai-hint={projectImage.imageHint}
+                            className="object-cover"
+                          />
+                        </Link>
+                      ) : (
+                        <Image
+                          src={projectImage.imageUrl}
+                          alt={projectImage.description}
+                          fill
+                          data-ai-hint={projectImage.imageHint}
+                          className="object-cover"
+                        />
+                      )}
+                    </div>
+                  )}
+                  <CardHeader>
+                    {project.link ? (
+                      <Link href={project.link} target="_blank" rel="noopener noreferrer">
+                        <CardTitle className="hover:underline">{project.title}</CardTitle>
+                      </Link>
+                    ) : (
+                      <CardTitle>{project.title}</CardTitle>
+                    )}
+                    <CardDescription className="leading-relaxed text-left hyphens-auto">{project.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow" />
+                  <CardFooter>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <Badge key={tag} variant="secondary">{tag}</Badge>
+                      ))}
+                    </div>
+                  </CardFooter>
+                </Card>
+              </ScrollAnimationWrapper>
             );
           })}
         </div>

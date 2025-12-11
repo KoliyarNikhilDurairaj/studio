@@ -28,12 +28,14 @@ const ContactSection = () => {
       id="contact" 
       className="py-20 lg:py-32 bg-secondary/30"
     >
-      <div className="container mx-auto px-4">
+      <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold font-headline text-primary">
-            Contact
-          </h2>
-          <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
+          <Link href="/contact" className="group inline-block">
+            <h2 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600 drop-shadow-sm transition-transform duration-300 group-hover:scale-105">
+              Contact
+            </h2>
+          </Link>
+          <p className="text-lg text-muted-foreground mt-4 max-w-xl mx-auto leading-relaxed">
             Have a project idea or want to learn more? Reach out to schedule your first free mentorship session.
           </p>
           <div className="mt-8 flex justify-center items-center gap-2">
@@ -65,7 +67,7 @@ const ContactSection = () => {
                 <Textarea id="message" placeholder="Tell us about your project or what you want to learn..." rows={5} value={message} onChange={(e) => setMessage(e.target.value)} />
               </div>
               <div className="text-right">
-                <Button type="button" size="lg" className="bg-accent hover:bg-accent/90" onClick={handleRequestMentorship}>
+                <Button type="button" size="lg" className="bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600 text-white font-bold hover:opacity-90 transition-opacity [text-shadow:0_1px_2px_rgba(0,0,0,0.5)]" onClick={handleRequestMentorship}>
                   Request Mentorship
                 </Button>
               </div>

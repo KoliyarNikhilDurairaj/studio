@@ -15,17 +15,20 @@ const socialLinks = [
 ];
 
 const SocialSection = () => {
+
   return (
     <section 
       id="connect" 
       className="py-20 lg:py-32"
     >
-      <div className="container mx-auto px-4">
+      <div className="container">
         <div className="text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold font-headline text-primary mb-4">
-            Connect
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <Link href="/connect" className="group inline-block">
+            <h2 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-violet-500 via-fuchsia-600 to-purple-700 drop-shadow-sm transition-transform duration-300 group-hover:scale-105 mb-4">
+              Connect
+            </h2>
+          </Link>
+          <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto leading-relaxed">
             Follow our journey, get the latest updates, and join the conversation on our social media channels.
           </p>
           <div className="flex justify-center gap-4">

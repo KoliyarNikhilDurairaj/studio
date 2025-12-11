@@ -2,8 +2,10 @@
 "use client";
 
 import React from 'react';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle2 } from 'lucide-react';
+import ScrollAnimationWrapper from '../scroll-animation-wrapper';
 
 const services = [
   {
@@ -21,35 +23,40 @@ const services = [
 ];
 
 const ServicesSection = () => {
+
   return (
     <section 
       id="services" 
       className="py-20 lg:py-32"
     >
-      <div className="container mx-auto px-4">
+      <div className="container">
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold font-headline text-primary">
-            How We Help
-          </h2>
-          <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
+          <Link href="/services" className="group inline-block">
+            <h2 className="text-4xl lg:text-5xl font-bold font-headline text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-600 drop-shadow-sm transition-transform duration-300 group-hover:scale-105">
+              Services
+            </h2>
+          </Link>
+          <p className="text-lg text-muted-foreground mt-4 max-w-xl mx-auto leading-relaxed">
             Our services are designed to provide comprehensive support for your entire IoT project journey.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-card/50">
-              <CardHeader>
-                <CardTitle className="text-xl">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <CheckCircle2 className="h-6 w-6 text-accent mr-3 mt-1 shrink-0" />
-                    <p className="text-muted-foreground">{service.description}</p>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            <ScrollAnimationWrapper key={index} delay={index * 150}>
+              <Card className="shadow-lg hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 bg-card/50 h-full">
+                <CardHeader>
+                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-4">
+                    <li className="flex items-start">
+                      <CheckCircle2 className="h-6 w-6 text-accent mr-3 mt-1 shrink-0" />
+                      <p className="text-muted-foreground leading-relaxed text-left hyphens-auto">{service.description}</p>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </ScrollAnimationWrapper>
           ))}
         </div>
       </div>

@@ -1,3 +1,4 @@
+
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -8,10 +9,17 @@ export default {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      center: true,
+      padding: '1rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
     extend: {
       fontFamily: {
-        body: ['PT Sans', 'sans-serif'],
-        headline: ['PT Sans', 'sans-serif'],
+        body: ['Lato', 'sans-serif'],
+        headline: ['Lato', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
