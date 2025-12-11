@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Bot, Send, User, X, MessageCircle } from 'lucide-react';
-import { chat, type ChatInput } from '@/ai/flows/chat-flow';
+import type { ChatInput } from '@/ai/flows/chat-flow';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card';
 
@@ -113,10 +113,14 @@ export default function Chatbot() {
             content: [{ text: m.content }]
         })) as ChatInput['history'];
 
-        const response = await chat({
-            history: chatHistory,
-            message: input,
+        const API_URL = (process.env.NEXT_PUBLIC_CHAT_API_URL as string) || '/api/chat';
+        const res = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ history: chatHistory, message: input }),
         });
+        if (!res.ok) throw new Error('Chat API error');
+        const response = await res.json();
       
       const botMessage: Message = { role: 'model', content: response.message };
       setMessages((prev) => [...prev, botMessage]);
