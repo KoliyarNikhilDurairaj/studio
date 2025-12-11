@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { Bot, Send, User, X } from 'lucide-react';
+import { Bot, Send, User, X, MessageCircle } from 'lucide-react';
 import { chat, type ChatInput } from '@/ai/flows/chat-flow';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card';
@@ -263,7 +263,7 @@ export default function Chatbot() {
         )}
         aria-label={isOpen ? "Close Chatbot" : "Open Chatbot"}
       >
-        {isOpen ? <X className="h-6 w-6" /> : <Bot className="h-6 w-6" />}
+        {isOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
       </Button>
     </div>
   );
